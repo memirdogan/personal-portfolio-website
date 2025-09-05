@@ -36,7 +36,7 @@ const articles: Article[] = [
 ];
 
 const Publications = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <section id="publications">
@@ -83,7 +83,7 @@ const Publications = () => {
                 <div className="flex items-center justify-between mt-auto">
                   <span className="flex items-center gap-1 text-sm text-blue-800 dark:text-blue-400">
                     <FiCalendar className="w-4 h-4" />
-                    {new Date(article.pubDate).toLocaleDateString('tr-TR', {
+                    {new Date(article.pubDate).toLocaleDateString(language === 'tr' ? 'tr-TR' : 'en-US', {
                       year: 'numeric',
                       month: 'short',
                       day: 'numeric'

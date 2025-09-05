@@ -42,7 +42,7 @@ const certifications: EducationItem[] = [
     degree: 'Cambly Certificate of Accomplishment',
     period: 'Ağustos 2025',
     type: 'certification',
-    location: 'İngilizce'
+    location: 'common.english'
   }
 ];
 
@@ -99,7 +99,7 @@ const Education = () => {
                   </span>
                   <span className="flex items-center gap-1">
                     <FiMapPin className="w-4 h-4" />
-                    {item.location}
+                    {item.location.startsWith('common.') ? t(item.location) : item.location}
                   </span>
                 </div>
               </motion.div>
@@ -145,7 +145,7 @@ const Education = () => {
                   </span>
                   <span className="flex items-center gap-1">
                     <FiMapPin className="w-4 h-4" />
-                    {cert.location}
+                    {cert.location.startsWith('common.') ? t(cert.location) : cert.location}
                   </span>
                 </div>
               </motion.div>

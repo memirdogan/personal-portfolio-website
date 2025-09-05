@@ -44,7 +44,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   }, [language]);
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    return (translations[language] as any)[key] || key;
   };
 
   return (
@@ -166,7 +166,8 @@ const translations = {
     // Common
     'common.readMore': 'Devamını Oku',
     'common.viewProject': 'Projeyi Görüntüle',
-    'common.external': 'Harici Link'
+    'common.external': 'Harici Link',
+    'common.english': 'İngilizce'
   },
   en: {
     // Navigation
@@ -278,6 +279,7 @@ const translations = {
     // Common
     'common.readMore': 'Read More',
     'common.viewProject': 'View Project',
-    'common.external': 'External Link'
+    'common.external': 'External Link',
+    'common.english': 'English'
   }
 };
