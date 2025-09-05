@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://memir.codes/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow certain file types that don't need indexing
+Disallow: /*.json$
+Disallow: /*.xml$ 
+Disallow: /vite.svg
+Disallow: /.DS_Store
+
+# Allow important directories
+Allow: /projects/
+Allow: /pp/
+Allow: /leadership-community/
+Allow: /resume/
