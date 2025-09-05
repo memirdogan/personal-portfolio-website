@@ -49,6 +49,31 @@ const certifications: EducationItem[] = [
 const Education = () => {
   const { t } = useLanguage();
   const isTR = document.documentElement.lang === 'tr';
+
+  const translateLocation = (location: string) => {
+    if (isTR) return location;
+    return location
+      .replace('İstanbul, Türkiye', 'Istanbul, Turkey')
+      .replace('Türkiye', 'Turkey');
+  };
+
+  const translatePeriod = (period: string) => {
+    if (isTR) return period;
+    return period
+      .replace('Günümüz', 'Present')
+      .replace('Ocak', 'January')
+      .replace('Şubat', 'February')
+      .replace('Mart', 'March')
+      .replace('Nisan', 'April')
+      .replace('Mayıs', 'May')
+      .replace('Haziran', 'June')
+      .replace('Temmuz', 'July')
+      .replace('Ağustos', 'August')
+      .replace('Eylül', 'September')
+      .replace('Ekim', 'October')
+      .replace('Kasım', 'November')
+      .replace('Aralık', 'December');
+  };
   
   return (
     <section id="education">
@@ -96,13 +121,11 @@ const Education = () => {
                 <div className="flex flex-wrap gap-4 text-sm text-blue-800 dark:text-blue-400">
                   <span className="flex items-center gap-1">
                     <FiCalendar className="w-4 h-4" />
-                    {isTR ? item.period : item.period
-                      .replace('Günümüz', 'Present')
-                      .replace('Ağustos', 'August')}
+                    {translatePeriod(item.period)}
                   </span>
                   <span className="flex items-center gap-1">
                     <FiMapPin className="w-4 h-4" />
-                    {item.location.startsWith('common.') ? t(item.location) : item.location}
+                    {item.location.startsWith('common.') ? t(item.location) : translateLocation(item.location)}
                   </span>
                 </div>
               </motion.div>
@@ -144,13 +167,11 @@ const Education = () => {
                 <div className="flex flex-wrap gap-4 text-sm text-blue-800 dark:text-blue-400">
                   <span className="flex items-center gap-1">
                     <FiCalendar className="w-4 h-4" />
-                    {isTR ? cert.period : cert.period
-                      .replace('Nisan', 'April')
-                      .replace('Ağustos', 'August')}
+                    {translatePeriod(cert.period)}
                   </span>
                   <span className="flex items-center gap-1">
                     <FiMapPin className="w-4 h-4" />
-                    {cert.location.startsWith('common.') ? t(cert.location) : cert.location}
+                    {cert.location.startsWith('common.') ? t(cert.location) : translateLocation(cert.location)}
                   </span>
                 </div>
               </motion.div>

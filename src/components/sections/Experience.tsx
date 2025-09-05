@@ -71,6 +71,31 @@ const experiences: ExperienceItem[] = [
 const Experience = () => {
   const { t } = useLanguage();
   const isTR = document.documentElement.lang === 'tr';
+
+  const translateLocation = (location: string) => {
+    if (isTR) return location;
+    return location
+      .replace('İstanbul, Türkiye', 'Istanbul, Turkey')
+      .replace('Türkiye', 'Turkey');
+  };
+
+  const translatePeriod = (period: string) => {
+    if (isTR) return period;
+    return period
+      .replace('Günümüz', 'Present')
+      .replace('Ocak', 'January')
+      .replace('Şubat', 'February')
+      .replace('Mart', 'March')
+      .replace('Nisan', 'April')
+      .replace('Mayıs', 'May')
+      .replace('Haziran', 'June')
+      .replace('Temmuz', 'July')
+      .replace('Ağustos', 'August')
+      .replace('Eylül', 'September')
+      .replace('Ekim', 'October')
+      .replace('Kasım', 'November')
+      .replace('Aralık', 'December');
+  };
   
   return (
     <section id="experience">
@@ -103,19 +128,12 @@ const Experience = () => {
                     </h3>
                     <p className="card-subtitle flex items-center gap-2">
                       <FiMapPin className="text-blue-600 dark:text-blue-500" />
-                      {isTR ? exp.location : 'Istanbul, Türkiye'}
+                      {translateLocation(exp.location)}
                     </p>
                   </div>
                   <p className="card-subtitle flex items-center gap-2">
                     <FiCalendar className="text-blue-600 dark:text-blue-500" />
-                    {isTR ? exp.period : exp.period
-                      .replace('Günümüz', 'Present')
-                      .replace('Aralık', 'December')
-                      .replace('Temmuz', 'July')
-                      .replace('Haziran', 'June')
-                      .replace('Eylül', 'September')
-                      .replace('Ocak', 'January')
-                      .replace('Mart', 'March')}
+                    {translatePeriod(exp.period)}
                   </p>
                 </div>
 

@@ -61,6 +61,31 @@ const leadershipItems: LeadershipItem[] = [
 const Leadership = () => {
   const { t } = useLanguage();
   const isTR = document.documentElement.lang === 'tr';
+
+  const translateLocation = (location: string) => {
+    if (isTR) return location;
+    return location
+      .replace('İstanbul, Türkiye', 'Istanbul, Turkey')
+      .replace('Türkiye', 'Turkey');
+  };
+
+  const translatePeriod = (period: string) => {
+    if (isTR) return period;
+    return period
+      .replace('Günümüz', 'Present')
+      .replace('Ocak', 'January')
+      .replace('Şubat', 'February')
+      .replace('Mart', 'March')
+      .replace('Nisan', 'April')
+      .replace('Mayıs', 'May')
+      .replace('Haziran', 'June')
+      .replace('Temmuz', 'July')
+      .replace('Ağustos', 'August')
+      .replace('Eylül', 'September')
+      .replace('Ekim', 'October')
+      .replace('Kasım', 'November')
+      .replace('Aralık', 'December');
+  };
   
   return (
     <section id="leadership" className="py-20 relative overflow-hidden">
@@ -115,19 +140,11 @@ const Leadership = () => {
                       <div className="flex flex-wrap gap-4 mt-2 text-sm text-gray-600 dark:text-gray-400">
                         <div className="flex items-center gap-1">
                           <FiCalendar className="w-4 h-4" />
-                          <span>{isTR ? item.period : item.period
-                            .replace('Günümüz', 'Present')
-                            .replace('Temmuz', 'July')
-                            .replace('Ağustos', 'August')
-                            .replace('Haziran', 'June')}
-                          </span>
+                          <span>{translatePeriod(item.period)}</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <FiMapPin className="w-4 h-4" />
-                          <span>{isTR ? item.location : item.location
-                            .replace('İstanbul, Türkiye', 'Istanbul, Turkey')
-                            .replace('Türkiye', 'Turkey')}
-                          </span>
+                          <span>{translateLocation(item.location)}</span>
                         </div>
                       </div>
                     </div>
