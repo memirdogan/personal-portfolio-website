@@ -263,7 +263,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Musa Emir Doğan**
 - **Website**: [memir.codes](https://memir.codes)
-- **Email**: [contact@memir.codes](mailto:contact@memir.codes)
+- **Email**: [musaemird@gmail.com](mailto:musaemird@gmail.com)
 - **LinkedIn**: [linkedin.com/in/mudogan](https://linkedin.com/in/mudogan)
 - **GitHub**: [github.com/memirdogan](https://github.com/memirdogan)
 
