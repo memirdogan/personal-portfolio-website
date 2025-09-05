@@ -69,8 +69,8 @@ const experiences: ExperienceItem[] = [
   ];
 
 const Experience = () => {
-  const { t } = useLanguage();
-  const isTR = document.documentElement.lang === 'tr';
+  const { t, language } = useLanguage();
+  const isTR = language === 'tr';
 
   const translateLocation = (location: string) => {
     if (isTR) return location;
