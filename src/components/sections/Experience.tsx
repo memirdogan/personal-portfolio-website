@@ -70,6 +70,7 @@ const experiences: ExperienceItem[] = [
 
 const Experience = () => {
   const { t } = useLanguage();
+  const isTR = document.documentElement.lang === 'tr';
   
   return (
     <section id="experience">
@@ -102,12 +103,19 @@ const Experience = () => {
                     </h3>
                     <p className="card-subtitle flex items-center gap-2">
                       <FiMapPin className="text-blue-600 dark:text-blue-500" />
-                      {exp.location}
+                      {isTR ? exp.location : 'Istanbul, Türkiye'}
                     </p>
                   </div>
                   <p className="card-subtitle flex items-center gap-2">
                     <FiCalendar className="text-blue-600 dark:text-blue-500" />
-                    {exp.period}
+                    {isTR ? exp.period : exp.period
+                      .replace('Günümüz', 'Present')
+                      .replace('Aralık', 'December')
+                      .replace('Temmuz', 'July')
+                      .replace('Haziran', 'June')
+                      .replace('Eylül', 'September')
+                      .replace('Ocak', 'January')
+                      .replace('Mart', 'March')}
                   </p>
                 </div>
 

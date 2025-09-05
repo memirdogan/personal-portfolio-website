@@ -60,6 +60,7 @@ const leadershipItems: LeadershipItem[] = [
 
 const Leadership = () => {
   const { t } = useLanguage();
+  const isTR = document.documentElement.lang === 'tr';
   
   return (
     <section id="leadership" className="py-20 relative overflow-hidden">
@@ -114,11 +115,19 @@ const Leadership = () => {
                       <div className="flex flex-wrap gap-4 mt-2 text-sm text-gray-600 dark:text-gray-400">
                         <div className="flex items-center gap-1">
                           <FiCalendar className="w-4 h-4" />
-                          <span>{item.period}</span>
+                          <span>{isTR ? item.period : item.period
+                            .replace('Günümüz', 'Present')
+                            .replace('Temmuz', 'July')
+                            .replace('Ağustos', 'August')
+                            .replace('Haziran', 'June')}
+                          </span>
                         </div>
                         <div className="flex items-center gap-1">
                           <FiMapPin className="w-4 h-4" />
-                          <span>{item.location}</span>
+                          <span>{isTR ? item.location : item.location
+                            .replace('İstanbul, Türkiye', 'Istanbul, Turkey')
+                            .replace('Türkiye', 'Turkey')}
+                          </span>
                         </div>
                       </div>
                     </div>

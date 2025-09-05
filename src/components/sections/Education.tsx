@@ -48,6 +48,7 @@ const certifications: EducationItem[] = [
 
 const Education = () => {
   const { t } = useLanguage();
+  const isTR = document.documentElement.lang === 'tr';
   
   return (
     <section id="education">
@@ -95,7 +96,9 @@ const Education = () => {
                 <div className="flex flex-wrap gap-4 text-sm text-blue-800 dark:text-blue-400">
                   <span className="flex items-center gap-1">
                     <FiCalendar className="w-4 h-4" />
-                    {item.period}
+                    {isTR ? item.period : item.period
+                      .replace('Günümüz', 'Present')
+                      .replace('Ağustos', 'August')}
                   </span>
                   <span className="flex items-center gap-1">
                     <FiMapPin className="w-4 h-4" />
@@ -141,7 +144,9 @@ const Education = () => {
                 <div className="flex flex-wrap gap-4 text-sm text-blue-800 dark:text-blue-400">
                   <span className="flex items-center gap-1">
                     <FiCalendar className="w-4 h-4" />
-                    {cert.period}
+                    {isTR ? cert.period : cert.period
+                      .replace('Nisan', 'April')
+                      .replace('Ağustos', 'August')}
                   </span>
                   <span className="flex items-center gap-1">
                     <FiMapPin className="w-4 h-4" />
