@@ -3,7 +3,7 @@
 > Modern, responsive, and SEO-optimized personal portfolio website built with React, TypeScript, and Tailwind CSS.
 
 [![Live](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=vercel)](https://memir.codes)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/memirdogan/personal-website)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/memirdogan/personal-portfolio-website)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/mudogan)
 
 ## 📋 Table of Contents
