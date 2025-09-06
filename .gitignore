@@ -1,3 +1,43 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.vite/
+build/
+.cache/
+.parcel-cache/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor/IDE
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Tooling caches
+.eslintcache
+
+# Hosting/platform
+.vercel/
+.netlify/
+firebase-debug.log
 # Logs
 logs
 *.log
