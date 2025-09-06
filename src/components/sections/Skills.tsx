@@ -13,7 +13,7 @@ const skillCategories: SkillCategory[] = [
   {
     title: 'Cloud & Backend Platforms',
     icon: <FiCloud className="w-6 h-6" />,
-    skills: ['Amazon Web Services (AWS)', 'DigitalOcean', 'Supabase', 'Appwrite']
+    skills: ['Amazon Web Services (AWS)', 'DigitalOcean', 'Cloudflare' , 'Supabase', 'Appwrite']
   },
   {
     title: 'AWS Services',
