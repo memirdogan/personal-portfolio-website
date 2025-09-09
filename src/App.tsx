@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
@@ -14,14 +13,9 @@ import BrandLine from './components/sections/BrandLine';
 import Footer from './components/layout/Footer';
 
 function App() {
-  useEffect(() => {
-    // Always set dark mode
-    document.documentElement.classList.add('dark');
-  }, []);
-
   return (
     <LanguageProvider>
-      <div className="min-h-screen dark">
+      <div className="min-h-screen">
         <div className="bg-gray-900 text-white">
             <Navbar />
             <main role="main">

@@ -4,54 +4,54 @@ import { FiCloud, FiBox, FiCode, FiServer, FiGitBranch, FiActivity, FiDatabase, 
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface SkillCategory {
-  title: string;
+  titleKey: string;
   icon: React.ReactNode;
   skills: string[];
 }
 
-const skillCategories: SkillCategory[] = [
+const getSkillCategories = (t: (k: string) => string): SkillCategory[] => [
   {
-    title: 'Cloud & Backend Platforms',
+    titleKey: 'skills.cat.cloud',
     icon: <FiCloud className="w-6 h-6" />,
     skills: ['Amazon Web Services (AWS)', 'DigitalOcean', 'Cloudflare' , 'Supabase', 'Appwrite']
   },
   {
-    title: 'AWS Services',
+    titleKey: 'skills.cat.aws',
     icon: <FiShield className="w-6 h-6" />,
     skills: ['EC2', 'S3', 'Lambda', 'SQS', 'SNS', 'ECR', 'Route53', 'RDS', 'CloudWatch', 'ECS', 'EKS', 'ALB', 'CloudFront']
   },
   {
-    title: 'Container & Orchestration',
+    titleKey: 'skills.cat.containers',
     icon: <FiBox className="w-6 h-6" />,
     skills: ['Kubernetes', 'Docker', 'Helm', 'ECS', 'EKS']
   },
   {
-    title: 'Infrastructure & DevOps',
+    titleKey: 'skills.cat.devops',
     icon: <FiServer className="w-6 h-6" />,
     skills: ['Terraform', 'Terragrunt', 'Linux', 'Nginx', 'CI/CD', 'GitHub Actions']
   },
   {
-    title: 'Programming & Scripting',
+    titleKey: 'skills.cat.programming',
     icon: <FiCode className="w-6 h-6" />,
     skills: ['Python', 'Bash Script', 'C', 'C++', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript']
   },
   {
-    title: 'Databases',
+    titleKey: 'skills.cat.databases',
     icon: <FiDatabase className="w-6 h-6" />,
     skills: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'DynamoDB', 'SQLite', 'Microsoft SQL Server']
   },
   {
-    title: 'Monitoring & Observability',
+    titleKey: 'skills.cat.observability',
     icon: <FiActivity className="w-6 h-6" />,
     skills: ['Prometheus', 'Grafana', 'New Relic', 'CloudWatch']
   },
   {
-    title: 'Version Control & Project Management',
+    titleKey: 'skills.cat.vcs',
     icon: <FiGitBranch className="w-6 h-6" />,
     skills: ['Git', 'GitHub', 'GitHub Actions', 'Bitbucket', 'Jira', 'Confluence', 'Notion', 'Trello']
   },
   {
-    title: 'Machine Learning & Data Science',
+    titleKey: 'skills.cat.ml',
     icon: <FiLayers className="w-6 h-6" />,
     skills: ['Machine Learning', 'NLP', 'LLMs', 'Data Analysis', 'Jupyter Notebook']
   }
@@ -59,6 +59,7 @@ const skillCategories: SkillCategory[] = [
 
 const Skills = () => {
   const { t } = useLanguage();
+  const skillCategories = getSkillCategories(t);
 
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
@@ -96,7 +97,7 @@ const Skills = () => {
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  {category.title}
+                  {t(category.titleKey)}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">

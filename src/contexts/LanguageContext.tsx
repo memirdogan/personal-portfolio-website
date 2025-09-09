@@ -87,6 +87,15 @@ const translations = {
     // Skills Section
     'skills.title': 'Teknik Yetenekler',
     'skills.subtitle': 'DevOps uygulamaları, bulut teknolojileri ve altyapı otomasyonunda sahip olduğum teknik yetenekler',
+    'skills.cat.cloud': 'Bulut ve Backend Platformları',
+    'skills.cat.aws': 'AWS Servisleri',
+    'skills.cat.containers': 'Container ve Orkestrasyon',
+    'skills.cat.devops': 'Altyapı ve DevOps',
+    'skills.cat.programming': 'Programlama ve Script',
+    'skills.cat.databases': 'Veritabanları',
+    'skills.cat.observability': 'İzleme ve Gözlemlenebilirlik',
+    'skills.cat.vcs': 'Versiyon Kontrol ve Proje Yönetimi',
+    'skills.cat.ml': 'Makine Öğrenmesi ve Veri Bilimi',
     
     // Experience Section
     'experience.title': 'Profesyonel Deneyim',
@@ -200,6 +209,15 @@ const translations = {
     // Skills Section
     'skills.title': 'Technical Skills',
     'skills.subtitle': 'Technical skills in DevOps practices, cloud technologies, and infrastructure automation',
+    'skills.cat.cloud': 'Cloud & Backend Platforms',
+    'skills.cat.aws': 'AWS Services',
+    'skills.cat.containers': 'Container & Orchestration',
+    'skills.cat.devops': 'Infrastructure & DevOps',
+    'skills.cat.programming': 'Programming & Scripting',
+    'skills.cat.databases': 'Databases',
+    'skills.cat.observability': 'Monitoring & Observability',
+    'skills.cat.vcs': 'Version Control & Project Management',
+    'skills.cat.ml': 'Machine Learning & Data Science',
     
     // Experience Section
     'experience.title': 'Professional Experience',
