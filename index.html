@@ -33,6 +33,7 @@
     <meta property="og:image:alt" content="Musa Emir Doğan - Cloud & Platform Engineer" />
     <meta property="og:site_name" content="Musa Emir Doğan Portfolio" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="tr_TR" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -51,8 +52,6 @@
     <meta name="theme-color" content="#1e40af" />
     
     <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <!-- Preload critical resources -->
     <link rel="preload" href="/pp/pp.webp" as="image" type="image/webp" />
@@ -70,6 +69,10 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://memir.codes/" />
+    <!-- Hreflang alternates for language variants -->
+    <link rel="alternate" href="https://memir.codes/" hreflang="en" />
+    <link rel="alternate" href="https://memir.codes/?lang=tr" hreflang="tr" />
+    <link rel="alternate" href="https://memir.codes/" hreflang="x-default" />
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -209,6 +212,73 @@
               "item": "https://memir.codes/#skills"
             }
           ]
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Projects JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Musa Emir Doğan - Projects Portfolio",
+      "description": "Professional projects and contributions by Musa Emir Doğan",
+      "url": "https://memir.codes/#projects",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "position": 1,
+          "name": "RenaByte & Akbis Platform",
+          "description": "Healthcare technology project developed for Teknofest competition",
+          "url": "https://renabyte.com",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "author": {"@type": "Person","name": "Musa Emir Doğan"},
+          "dateCreated": "2024-07-01",
+          "programmingLanguage": ["Python", "JavaScript", "Docker"],
+          "keywords": ["Healthcare", "Teknofest", "Team Project", "Cloud Infrastructure"]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 2,
+          "name": "Sunoa E-Commerce Platform",
+          "description": "Modern e-commerce website for premium sunscreen products built with Next.js 15, React 19, TypeScript, and Tailwind CSS",
+          "url": "https://sunoa.memir.codes",
+          "codeRepository": "https://github.com/memirdogan/sunoa-ecommerce-website",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "author": {"@type": "Person","name": "Musa Emir Doğan"},
+          "dateCreated": "2024-12-01",
+          "programmingLanguage": ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+          "keywords": ["E-commerce", "Next.js", "React", "TypeScript", "Static Site Generation"]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 3,
+          "name": "Minikube-2048 Game Deployment",
+          "description": "2048 game deployment with Kubernetes on Minikube, includes configurable resource management and secure secret integration using Helm",
+          "codeRepository": "https://github.com/memirdogan/k8s-minikube-2048",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Kubernetes",
+          "author": {"@type": "Person","name": "Musa Emir Doğan"},
+          "dateCreated": "2024-11-01",
+          "programmingLanguage": ["YAML", "Kubernetes", "Helm"],
+          "keywords": ["Kubernetes", "Minikube", "Helm", "Container Orchestration", "Game Deployment"]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 4,
+          "name": "Terraform Architecture Design",
+          "description": "Terraform-managed architecture showcasing applications running securely within private subnets with NAT gateway and load balancer",
+          "codeRepository": "https://github.com/memirdogan/Terraform-Architecture-deploy",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Cloud",
+          "author": {"@type": "Person","name": "Musa Emir Doğan"},
+          "dateCreated": "2024-12-01",
+          "programmingLanguage": ["HCL", "Terraform"],
+          "keywords": ["Terraform", "Infrastructure as Code", "AWS", "Cloud Architecture", "DevOps"]
         }
       ]
     }

@@ -26,14 +26,16 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const [language, setLanguage] = useState<Language>('en');
 
   useEffect(() => {
-    // Check localStorage for saved language preference
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'tr' || savedLanguage === 'en')) {
-      setLanguage(savedLanguage);
-    } else {
-      // Default to English
-      setLanguage('en');
-    }
+    // Prefer URL param (?lang=tr|en), then localStorage, default 'en'
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang') as Language | null;
+    const savedLanguage = localStorage.getItem('language') as Language | null;
+    const initialLang: Language = (urlLang === 'tr' || urlLang === 'en')
+      ? urlLang
+      : (savedLanguage === 'tr' || savedLanguage === 'en')
+        ? savedLanguage
+        : 'en';
+    setLanguage(initialLang);
   }, []);
 
   useEffect(() => {
@@ -41,6 +43,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     localStorage.setItem('language', language);
     // Update document language attribute
     document.documentElement.lang = language;
+    // Reflect language in URL for shareability and SEO signals
+    const params = new URLSearchParams(window.location.search);
+    params.set('lang', language);
+    const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+    window.history.replaceState({}, '', newUrl);
   }, [language]);
 
   const t = (key: string): string => {
