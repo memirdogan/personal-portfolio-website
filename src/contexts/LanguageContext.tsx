@@ -23,7 +23,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('tr');
 
   useEffect(() => {
     // Prefer URL param (?lang=tr|en), then localStorage, default 'en'
@@ -34,7 +34,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       ? urlLang
       : (savedLanguage === 'tr' || savedLanguage === 'en')
         ? savedLanguage
-        : 'en';
+        : 'tr';
     setLanguage(initialLang);
   }, []);
 
