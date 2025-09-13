@@ -8,8 +8,6 @@ Sitemap: https://memir.codes/sitemap.xml
 Crawl-delay: 1
 
 # Disallow certain file types and directories that don't need indexing
-Disallow: /*.json$
-Disallow: /*.xml$ 
 Disallow: /vite.svg
 Disallow: /.DS_Store
 Disallow: /src/
@@ -23,6 +21,8 @@ Disallow: /vite.config.*
 Disallow: /tailwind.config.*
 Disallow: /eslint.config.*
 Disallow: /postcss.config.*
+Disallow: /*.log$
+Disallow: /*.tmp$
 
 # Allow important directories and files
 Allow: /projects/

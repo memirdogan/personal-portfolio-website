@@ -2,7 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { trackPortfolioEvent } from '../../utils/analytics';
+// Analytics tracking functions
+const trackEvent = (action: string, category: string, label?: string, value?: number) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  }
+};
 
 interface SocialLink {
   icon: React.ReactNode;
@@ -26,7 +35,7 @@ const socialLinks: SocialLink[] = [
     icon: <FiMail className="w-6 h-6" />,
     href: 'mailto:musaemird@gmail.com',
     label: 'Email',
-    onClick: () => trackPortfolioEvent.emailClick('primary_email')
+    onClick: () => trackEvent('email_click', 'conversion', 'primary_email', 1)
   }
 ];
 
@@ -63,7 +72,7 @@ const Contact = () => {
               href="/resume/emir-dogan-resume.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 glass dark:glass-dark rounded-xl hover:scale-105 transition-transform"
-              onClick={() => trackPortfolioEvent.resumeDownload()}
+              onClick={() => trackEvent('resume_download', 'conversion', 'CV Download', 1)}
             >
               <FiDownload className="w-5 h-5 text-accent-blue dark:text-accent-purple" />
               <span className="font-medium">{t('contact.downloadResume')}</span>
@@ -84,7 +93,7 @@ const Contact = () => {
                   if (link.onClick) {
                     link.onClick();
                   }
-                  trackPortfolioEvent.externalLinkClick(link.label, link.href, 'contact_section');
+                  trackEvent('external_link_click', 'engagement', `${link.label}: ${link.href}`);
                 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

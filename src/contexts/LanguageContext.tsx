@@ -1,5 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { trackPortfolioEvent } from '../utils/analytics';
+// Analytics tracking function
+const trackEvent = (action: string, category: string, label?: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+    });
+  }
+};
 
 export type Language = 'tr' | 'en';
 
@@ -49,9 +57,28 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     params.set('lang', language);
     const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
     window.history.replaceState({}, '', newUrl);
+    // Update meta title & descriptions for i18n
+    const title = (translations[language] as any)['meta.title'] || document.title;
+    const desc = (translations[language] as any)['meta.description'];
+    if (title) document.title = title;
+    if (desc) {
+      const setMeta = (selector: string, attr: 'content' | 'value' = 'content') => {
+        const el = document.querySelector<HTMLMetaElement>(selector);
+        if (el) el.setAttribute(attr, desc);
+      };
+      setMeta('meta[name="description"]');
+      const setProp = (property: string, content: string) => {
+        const el = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`);
+        if (el) el.setAttribute('content', content);
+      };
+      setProp('og:title', title);
+      setProp('og:description', desc);
+      setProp('twitter:title', title);
+      setProp('twitter:description', desc);
+    }
     
     // Track language switch
-    trackPortfolioEvent.languageSwitch(language);
+    trackEvent('language_switch', 'engagement', language);
   }, [language]);
 
   const t = (key: string): string => {
@@ -68,6 +95,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 // Translations object
 const translations = {
   tr: {
+    // Meta
+    'meta.title': 'Musa Emir Doğan | Cloud & Platform Engineer | AWS Certified | DevOps',
+    'meta.description': 'Musa Emir Doğan - Sufle\'de Jr. Cloud & Platform Engineer. AWS Certified, Kubernetes, Docker, Terraform. Bulut altyapısı ve DevOps süreçlerinde deneyimli. Projelerimi inceleyin.',
     // Navigation
     'nav.about': 'Hakkında',
     'nav.experience': 'Deneyim',
@@ -190,6 +220,9 @@ const translations = {
     'common.english': 'İngilizce'
   },
   en: {
+    // Meta
+    'meta.title': 'Musa Emir Doğan | Cloud & Platform Engineer | AWS Certified | DevOps',
+    'meta.description': 'Musa Emir Doğan - Jr. Cloud & Platform Engineer at Sufle. AWS Certified, experienced with Kubernetes, Docker, and Terraform. Skilled in cloud infrastructure and DevOps.',
     // Navigation
     'nav.about': 'About',
     'nav.experience': 'Experience',

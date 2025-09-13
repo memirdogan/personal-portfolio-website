@@ -2,7 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiCode, FiGlobe } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { trackPortfolioEvent } from '../../utils/analytics';
+// Analytics tracking functions
+const trackEvent = (action: string, category: string, label?: string, value?: number) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  }
+};
 import OptimizedImage from '../OptimizedImage';
 
 interface ProjectItem {
@@ -130,8 +139,8 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors hover:scale-110 active:scale-90"
                         onClick={() => {
-                          trackPortfolioEvent.externalLinkClick('GitHub', project.githubUrl!);
-                          trackPortfolioEvent.projectView(project.title);
+                          trackEvent('external_link_click', 'engagement', `GitHub: ${project.githubUrl}`);
+                          trackEvent('project_view', 'engagement', project.title);
                         }}
                       >
                         <FiGithub className="w-5 h-5" />
@@ -144,8 +153,8 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 text-blue-600 dark:text-blue-400 transition-colors hover:scale-110 active:scale-90"
                         onClick={() => {
-                          trackPortfolioEvent.externalLinkClick('Live Site', project.liveUrl!);
-                          trackPortfolioEvent.projectView(project.title);
+                          trackEvent('external_link_click', 'engagement', `Live Site: ${project.liveUrl}`);
+                          trackEvent('project_view', 'engagement', project.title);
                         }}
                       >
                         <FiExternalLink className="w-5 h-5" />

@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="tr" class="dark">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-54DNXLKH');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CVPZDJ1DQK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CVPZDJ1DQK');
+    </script>
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,8 +23,6 @@
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow" />
     
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="your_verification_code_here" />
     
     <!-- Additional SEO Meta Tags -->
     <meta name="language" content="Turkish" />
@@ -41,6 +40,8 @@
     <meta property="og:title" content="Musa Emir Doğan | Cloud & Platform Engineer | AWS Certified" />
     <meta property="og:description" content="Musa Emir Doğan - Sufle'de Jr. Cloud & Platform Engineer. AWS Certified, Kubernetes, Docker, Terraform. Bulut altyapısı ve DevOps süreçlerinde deneyimli." />
     <meta property="og:image" content="https://memir.codes/pp/pp.webp" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
     <meta property="og:image:alt" content="Musa Emir Doğan - Cloud & Platform Engineer" />
     <meta property="og:site_name" content="Musa Emir Doğan Portfolio" />
     <meta property="og:locale" content="tr_TR" />
@@ -63,19 +64,13 @@
     <meta name="theme-color" content="#1e40af" />
     
     <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     
     <!-- Preload critical resources -->
     <link rel="preload" href="/pp/pp.webp" as="image" type="image/webp" />
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CVPZDJ1DQK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-CVPZDJ1DQK');
-    </script>
+    
     
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//github.com" />
@@ -88,14 +83,14 @@
     <link rel="prefetch" href="/projects/sunoa.webp" />
     <link rel="prefetch" href="/brands/sufle-logo.png" />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://memir.codes/" />
+    <!-- Canonical URL - Points to Turkish default -->
+    <link rel="canonical" href="https://memir.codes/?lang=tr" />
     <!-- Hreflang alternates for language variants -->
     <link rel="alternate" href="https://memir.codes/?lang=tr" hreflang="tr" />
     <link rel="alternate" href="https://memir.codes/?lang=en" hreflang="en" />
-    <link rel="alternate" href="https://memir.codes/?lang=tr" hreflang="x-default" />
+    <link rel="alternate" href="https://memir.codes/" hreflang="x-default" />
     
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data (Unified Graph) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -107,14 +102,8 @@
           "alternateName": "Emir Doğan",
           "jobTitle": "Jr. Cloud & Platform Engineer",
           "description": "AWS Certified Cloud & Platform Engineer specializing in Kubernetes, Docker, Terraform, and cloud infrastructure automation.",
-          "worksFor": {
-            "@type": "Organization",
-            "@id": "https://memir.codes/#sufle",
-            "name": "Sufle Teknoloji Araştırma Geliştirme A.Ş.",
-            "url": "https://sufle.io"
-          },
+          "worksFor": { "@id": "https://memir.codes/#sufle" },
           "url": "https://memir.codes",
-          "mainEntityOfPage": "https://memir.codes",
           "image": {
             "@type": "ImageObject",
             "url": "https://memir.codes/pp/pp.webp",
@@ -127,61 +116,7 @@
             "https://linkedin.com/in/mudogan",
             "https://renabyte.com",
             "https://sunoa.memir.codes"
-          ],
-          "knowsAbout": [
-            "Amazon Web Services (AWS)",
-            "Kubernetes",
-            "Docker",
-            "Terraform",
-            "Infrastructure as Code",
-            "DevOps",
-            "Platform Engineering",
-            "Cloud Computing",
-            "Site Reliability Engineering",
-            "CI/CD",
-            "Machine Learning",
-            "Python Programming"
-          ],
-          "hasCredential": [
-            {
-              "@type": "EducationalOccupationalCredential",
-              "name": "AWS Certified Cloud Practitioner",
-              "credentialCategory": "Professional Certification",
-              "recognizedBy": {
-                "@type": "Organization",
-                "name": "Amazon Web Services"
-              }
-            }
-          ],
-          "alumniOf": [
-            {
-              "@type": "EducationalOrganization",
-              "name": "İstanbul Aydın Üniversitesi",
-              "department": "Yönetim Bilişim Sistemleri"
-            },
-            {
-              "@type": "EducationalOrganization",
-              "name": "42 İstanbul",
-              "description": "Innovative programming school"
-            }
-          ],
-          "memberOf": [
-            {
-              "@type": "Organization",
-              "name": "Google Developer Student Clubs",
-              "description": "Community Lead"
-            },
-            {
-              "@type": "Organization", 
-              "name": "T3 AI Community",
-              "description": "Community Member"
-            }
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Istanbul",
-            "addressCountry": "Turkey"
-          }
+          ]
         },
         {
           "@type": "WebSite",
@@ -189,200 +124,62 @@
           "url": "https://memir.codes",
           "name": "Musa Emir Doğan - Portfolio",
           "description": "Professional portfolio of Musa Emir Doğan, Jr. Cloud & Platform Engineer at Sufle",
-          "publisher": {
-            "@id": "https://memir.codes/#person"
-          },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://memir.codes/#search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
+          "publisher": { "@id": "https://memir.codes/#person" }
         },
         {
-          "@type": "BreadcrumbList",
-          "@id": "https://memir.codes/#breadcrumbs",
+          "@type": "ItemList",
+          "@id": "https://memir.codes/#projects",
+          "name": "Musa Emir Doğan - Projects Portfolio",
           "itemListElement": [
             {
-              "@type": "ListItem",
+              "@type": "SoftwareApplication",
               "position": 1,
-              "name": "Home",
-              "item": "https://memir.codes/"
+              "name": "RenaByte & Akbis Platform",
+              "url": "https://renabyte.com",
+              "applicationCategory": "HealthApplication",
+              "operatingSystem": "Web"
             },
             {
-              "@type": "ListItem",
+              "@type": "SoftwareApplication",
               "position": 2,
-              "name": "About",
-              "item": "https://memir.codes/#about"
+              "name": "Sunoa E-Commerce Platform",
+              "url": "https://sunoa.memir.codes",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web"
             },
             {
-              "@type": "ListItem",
+              "@type": "SoftwareApplication",
               "position": 3,
-              "name": "Experience",
-              "item": "https://memir.codes/#experience"
+              "name": "Minikube-2048 Game Deployment",
+              "url": "https://github.com/memirdogan/k8s-minikube-2048",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Kubernetes"
             },
             {
-              "@type": "ListItem",
+              "@type": "SoftwareApplication",
               "position": 4,
-              "name": "Projects",
-              "item": "https://memir.codes/#projects"
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "name": "Skills",
-              "item": "https://memir.codes/#skills"
+              "name": "Terraform Architecture Design",
+              "url": "https://github.com/memirdogan/Terraform-Architecture-deploy",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Cloud"
             }
           ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://memir.codes/#sufle",
+          "name": "Sufle Teknoloji Araştırma Geliştirme A.Ş.",
+          "url": "https://sufle.io"
         }
       ]
     }
     </script>
     
-    <!-- Projects JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Musa Emir Doğan - Projects Portfolio",
-      "description": "Professional projects and contributions by Musa Emir Doğan",
-      "url": "https://memir.codes/#projects",
-      "numberOfItems": 4,
-      "itemListElement": [
-        {
-          "@type": "SoftwareApplication",
-          "position": 1,
-          "name": "RenaByte & Akbis Platform",
-          "description": "Healthcare technology project developed for Teknofest competition",
-          "url": "https://renabyte.com",
-          "applicationCategory": "HealthApplication",
-          "operatingSystem": "Web",
-          "author": {"@type": "Person","name": "Musa Emir Doğan"},
-          "dateCreated": "2024-07-01",
-          "programmingLanguage": ["Python", "JavaScript", "Docker"],
-          "keywords": ["Healthcare", "Teknofest", "Team Project", "Cloud Infrastructure"]
-        },
-        {
-          "@type": "SoftwareApplication",
-          "position": 2,
-          "name": "Sunoa E-Commerce Platform",
-          "description": "Modern e-commerce website for premium sunscreen products built with Next.js 15, React 19, TypeScript, and Tailwind CSS",
-          "url": "https://sunoa.memir.codes",
-          "codeRepository": "https://github.com/memirdogan/sunoa-ecommerce-website",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web",
-          "author": {"@type": "Person","name": "Musa Emir Doğan"},
-          "dateCreated": "2024-12-01",
-          "programmingLanguage": ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-          "keywords": ["E-commerce", "Next.js", "React", "TypeScript", "Static Site Generation"]
-        },
-        {
-          "@type": "SoftwareApplication",
-          "position": 3,
-          "name": "Minikube-2048 Game Deployment",
-          "description": "2048 game deployment with Kubernetes on Minikube, includes configurable resource management and secure secret integration using Helm",
-          "codeRepository": "https://github.com/memirdogan/k8s-minikube-2048",
-          "applicationCategory": "DeveloperApplication",
-          "operatingSystem": "Kubernetes",
-          "author": {"@type": "Person","name": "Musa Emir Doğan"},
-          "dateCreated": "2024-11-01",
-          "programmingLanguage": ["YAML", "Kubernetes", "Helm"],
-          "keywords": ["Kubernetes", "Minikube", "Helm", "Container Orchestration", "Game Deployment"]
-        },
-        {
-          "@type": "SoftwareApplication",
-          "position": 4,
-          "name": "Terraform Architecture Design",
-          "description": "Terraform-managed architecture showcasing applications running securely within private subnets with NAT gateway and load balancer",
-          "codeRepository": "https://github.com/memirdogan/Terraform-Architecture-deploy",
-          "applicationCategory": "DeveloperApplication",
-          "operatingSystem": "Cloud",
-          "author": {"@type": "Person","name": "Musa Emir Doğan"},
-          "dateCreated": "2024-12-01",
-          "programmingLanguage": ["HCL", "Terraform"],
-          "keywords": ["Terraform", "Infrastructure as Code", "AWS", "Cloud Architecture", "DevOps"]
-        }
-      ]
-    }
-    </script>
-    
-    <!-- Professional Skills JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Musa Emir Doğan",
-      "alternateName": "Emir Doğan",
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Cloud & Platform Engineer",
-        "occupationLocation": {
-          "@type": "City",
-          "name": "Istanbul",
-          "addressCountry": "TR"
-        },
-        "skills": [
-          "Amazon Web Services (AWS)",
-          "Kubernetes",
-          "Docker",
-          "Terraform",
-          "DevOps",
-          "Infrastructure as Code",
-          "Python",
-          "Machine Learning"
-        ]
-      },
-      "knowsAbout": [
-        "Cloud Computing",
-        "Container Orchestration",
-        "Infrastructure Automation",
-        "Site Reliability Engineering",
-        "CI/CD Pipelines",
-        "Microservices Architecture"
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "AWS Certified Cloud Practitioner",
-          "credentialCategory": "Professional Certification",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "Amazon Web Services"
-          }
-        }
-      ],
-      "award": [
-        "TEKNOFEST 2025 Semi-Finalist - 1st in Istanbul, 7th Overall",
-        "42 İstanbul Piscine Graduate"
-      ]
-    }
-    </script>
-    
-    <!-- Organization JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Sufle Teknoloji Araştırma Geliştirme A.Ş.",
-      "url": "https://sufle.io",
-      "employee": {
-        "@type": "Person",
-        "name": "Musa Emir Doğan",
-        "jobTitle": "Jr. Cloud & Platform Engineer"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Istanbul",
-        "addressCountry": "TR"
-      }
-    }
-    </script>
+    <!-- Projects JSON-LD removed (merged into unified graph) -->
+    <!-- Professional Skills JSON-LD removed (merged into Person) -->
+    <!-- Organization JSON-LD removed (merged into unified graph) -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54DNXLKH"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

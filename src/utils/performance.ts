@@ -11,8 +11,8 @@ export const performanceMetrics = {
         const lastEntry = entries[entries.length - 1];
         console.log('LCP:', lastEntry.startTime);
         
-        // Send to analytics
-        if (window.gtag) {
+        // Send to Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'web_vitals', {
             event_category: 'Performance',
             event_label: 'LCP',
@@ -29,8 +29,8 @@ export const performanceMetrics = {
         entries.forEach((entry) => {
           console.log('FID:', entry.processingStart - entry.startTime);
           
-          // Send to analytics
-          if (window.gtag) {
+          // Send to Google Analytics
+          if (typeof window !== 'undefined' && window.gtag) {
             window.gtag('event', 'web_vitals', {
               event_category: 'Performance',
               event_label: 'FID',
@@ -52,8 +52,8 @@ export const performanceMetrics = {
         }
         console.log('CLS:', clsValue);
         
-        // Send to analytics
-        if (window.gtag) {
+        // Send to Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'web_vitals', {
             event_category: 'Performance',
             event_label: 'CLS',
@@ -77,8 +77,8 @@ export const performanceMetrics = {
       const loadTime = performance.now();
       console.log('Page Load Time:', loadTime);
       
-      // Send to analytics
-      if (window.gtag) {
+      // Send to Google Analytics
+      if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'page_load_time', {
           event_category: 'Performance',
           event_label: 'Load Time',
@@ -99,8 +99,8 @@ export const performanceMetrics = {
       const loadTime = performance.now() - startTime;
       console.log(`Image Load Time (${imageSrc}):`, loadTime);
       
-      // Send to analytics
-      if (window.gtag) {
+      // Send to Google Analytics
+      if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'image_load_time', {
           event_category: 'Performance',
           event_label: imageSrc,
@@ -134,8 +134,8 @@ export const performanceMetrics = {
         
         console.log('Scroll Duration:', scrollDuration);
         
-        // Send to analytics
-        if (window.gtag) {
+        // Send to Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'scroll_performance', {
             event_category: 'Performance',
             event_label: 'Scroll Duration',
@@ -166,8 +166,8 @@ export const performanceMetrics = {
           const resource = entry as PerformanceResourceTiming;
           console.log(`Resource Load: ${resource.name} - ${resource.duration}ms`);
           
-          // Send to analytics for slow resources
-          if (resource.duration > 1000 && window.gtag) {
+          // Send to Google Analytics for slow resources
+          if (resource.duration > 1000 && typeof window !== 'undefined' && window.gtag) {
             window.gtag('event', 'slow_resource', {
               event_category: 'Performance',
               event_label: resource.name,

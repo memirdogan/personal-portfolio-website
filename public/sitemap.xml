@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <!-- Main page (Turkish default) -->
   <url>
     <loc>https://memir.codes/?lang=tr</loc>
@@ -13,54 +13,6 @@
       <image:title>Musa Emir Doğan - Cloud & Platform Engineer</image:title>
       <image:caption>Musa Emir Doğan'ın profesyonel profil fotoğrafı</image:caption>
     </image:image>
-  </url>
-
-  <!-- Main page (English) -->
-  <url>
-    <loc>https://memir.codes/?lang=en</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Root domain (redirects to Turkish) -->
-  <url>
-    <loc>https://memir.codes/</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- About section -->
-  <url>
-    <loc>https://memir.codes/#about</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Experience section -->
-  <url>
-    <loc>https://memir.codes/#experience</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Skills section -->
-  <url>
-    <loc>https://memir.codes/#skills</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Projects section -->
-  <url>
-    <loc>https://memir.codes/#projects</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
     <image:image>
       <image:loc>https://memir.codes/projects/renabyte.webp</image:loc>
       <image:title>RenaByte & Akbis Platform</image:title>
@@ -78,36 +30,20 @@
     </image:image>
   </url>
 
-  <!-- Leadership section -->
+  <!-- Main page (English) -->
   <url>
-    <loc>https://memir.codes/#leadership</loc>
+    <loc>https://memir.codes/?lang=en</loc>
     <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Root domain (redirects or default) -->
+  <url>
+    <loc>https://memir.codes/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- Education section -->
-  <url>
-    <loc>https://memir.codes/#education</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Publications section -->
-  <url>
-    <loc>https://memir.codes/#publications</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contact section -->
-  <url>
-    <loc>https://memir.codes/#contact</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
   </url>
 
 </urlset>
