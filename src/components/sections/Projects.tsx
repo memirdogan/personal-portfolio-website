@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiCode, FiGlobe } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { trackPortfolioEvent } from '../../utils/analytics';
+import OptimizedImage from '../OptimizedImage';
 
 interface ProjectItem {
   title: string;
@@ -103,16 +104,13 @@ const Projects = () => {
               {/* Project Image */}
               {project.image && (
                 <div className="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-700">
-                  <img
+                  <OptimizedImage
                     src={project.image}
                     alt={`${project.title} - ${project.technologies.join(', ')} project screenshot`}
-                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      // Fallback to placeholder if image doesn't exist
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                    }}
+                    loading="lazy"
+                    width={400}
+                    height={250}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>

@@ -7,14 +7,29 @@ Sitemap: https://memir.codes/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Disallow certain file types that don't need indexing
+# Disallow certain file types and directories that don't need indexing
 Disallow: /*.json$
 Disallow: /*.xml$ 
 Disallow: /vite.svg
 Disallow: /.DS_Store
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /.env
+Disallow: /package*.json
+Disallow: /tsconfig*.json
+Disallow: /vite.config.*
+Disallow: /tailwind.config.*
+Disallow: /eslint.config.*
+Disallow: /postcss.config.*
 
-# Allow important directories
+# Allow important directories and files
 Allow: /projects/
 Allow: /pp/
 Allow: /leadership-community/
 Allow: /resume/
+Allow: /brands/
+Allow: /manifest.json
+Allow: /robots.txt
+Allow: /sitemap.xml

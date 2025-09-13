@@ -23,6 +23,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Root domain (redirects to Turkish) -->
+  <url>
+    <loc>https://memir.codes/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- About section -->
   <url>
     <loc>https://memir.codes/#about</loc>
