@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="tr" class="dark">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-54DNXLKH');</script>
+    <!-- End Google Tag Manager -->
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
@@ -13,6 +21,9 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow" />
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="your_verification_code_here" />
     
     <!-- Additional SEO Meta Tags -->
     <meta name="language" content="Turkish" />
@@ -293,8 +304,69 @@
       ]
     }
     </script>
+    
+    <!-- Professional Skills JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Musa Emir Doğan",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Cloud & Platform Engineer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Istanbul",
+          "addressCountry": "TR"
+        },
+        "skills": [
+          "Amazon Web Services (AWS)",
+          "Kubernetes",
+          "Docker",
+          "Terraform",
+          "DevOps",
+          "Infrastructure as Code",
+          "Python",
+          "Machine Learning"
+        ]
+      },
+      "knowsAbout": [
+        "Cloud Computing",
+        "Container Orchestration",
+        "Infrastructure Automation",
+        "Site Reliability Engineering",
+        "CI/CD Pipelines",
+        "Microservices Architecture"
+      ]
+    }
+    </script>
+    
+    <!-- Organization JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sufle Teknoloji Araştırma Geliştirme A.Ş.",
+      "url": "https://sufle.io",
+      "employee": {
+        "@type": "Person",
+        "name": "Musa Emir Doğan",
+        "jobTitle": "Jr. Cloud & Platform Engineer"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Istanbul",
+        "addressCountry": "TR"
+      }
+    }
+    </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54DNXLKH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

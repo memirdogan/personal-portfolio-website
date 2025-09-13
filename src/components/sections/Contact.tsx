@@ -8,6 +8,7 @@ interface SocialLink {
   icon: React.ReactNode;
   href: string;
   label: string;
+  onClick?: () => void;
 }
 
 const socialLinks: SocialLink[] = [
@@ -24,7 +25,8 @@ const socialLinks: SocialLink[] = [
   {
     icon: <FiMail className="w-6 h-6" />,
     href: 'mailto:musaemird@gmail.com',
-    label: 'Email'
+    label: 'Email',
+    onClick: () => trackPortfolioEvent.emailClick('primary_email')
   }
 ];
 
@@ -78,7 +80,12 @@ const Contact = () => {
                 className="p-4 glass dark:glass-dark rounded-xl hover:scale-110 transition-transform"
                 whileHover={{ y: -5 }}
                 initial={{ opacity: 0, y: 20 }}
-                onClick={() => trackPortfolioEvent.externalLinkClick(link.label, link.href)}
+                onClick={() => {
+                  if (link.onClick) {
+                    link.onClick();
+                  }
+                  trackPortfolioEvent.externalLinkClick(link.label, link.href, 'contact_section');
+                }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
