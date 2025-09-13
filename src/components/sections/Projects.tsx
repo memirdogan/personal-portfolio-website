@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiCode, FiGlobe } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { trackPortfolioEvent } from '../../utils/analytics';
 
 interface ProjectItem {
   title: string;
@@ -130,8 +131,9 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors hover:scale-110 active:scale-90"
-                        onClick={(e) => {
-                          console.log('GitHub link clicked:', project.githubUrl);
+                        onClick={() => {
+                          trackPortfolioEvent.externalLinkClick('GitHub', project.githubUrl!);
+                          trackPortfolioEvent.projectView(project.title);
                         }}
                       >
                         <FiGithub className="w-5 h-5" />
@@ -143,8 +145,9 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 text-blue-600 dark:text-blue-400 transition-colors hover:scale-110 active:scale-90"
-                        onClick={(e) => {
-                          console.log('Live URL clicked:', project.liveUrl);
+                        onClick={() => {
+                          trackPortfolioEvent.externalLinkClick('Live Site', project.liveUrl!);
+                          trackPortfolioEvent.projectView(project.title);
                         }}
                       >
                         <FiExternalLink className="w-5 h-5" />

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { trackPortfolioEvent } from '../utils/analytics';
 
 export type Language = 'tr' | 'en';
 
@@ -48,6 +49,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     params.set('lang', language);
     const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
     window.history.replaceState({}, '', newUrl);
+    
+    // Track language switch
+    trackPortfolioEvent.languageSwitch(language);
   }, [language]);
 
   const t = (key: string): string => {

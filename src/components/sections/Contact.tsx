@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { trackPortfolioEvent } from '../../utils/analytics';
 
 interface SocialLink {
   icon: React.ReactNode;
@@ -60,6 +61,7 @@ const Contact = () => {
               href="/resume/emir-dogan-resume.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 glass dark:glass-dark rounded-xl hover:scale-105 transition-transform"
+              onClick={() => trackPortfolioEvent.resumeDownload()}
             >
               <FiDownload className="w-5 h-5 text-accent-blue dark:text-accent-purple" />
               <span className="font-medium">{t('contact.downloadResume')}</span>
@@ -76,6 +78,7 @@ const Contact = () => {
                 className="p-4 glass dark:glass-dark rounded-xl hover:scale-110 transition-transform"
                 whileHover={{ y: -5 }}
                 initial={{ opacity: 0, y: 20 }}
+                onClick={() => trackPortfolioEvent.externalLinkClick(link.label, link.href)}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
