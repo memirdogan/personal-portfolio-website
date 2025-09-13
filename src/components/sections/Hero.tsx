@@ -58,6 +58,10 @@ const Hero = () => {
                 src="/pp/pp.webp"
                 alt="Musa Emir Doğan - Jr. Cloud & Platform Engineer professional profile photo"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={192}
+                height={192}
                 className="w-full h-full rounded-full object-cover relative z-10 shadow-lg"
               />
             </div>
