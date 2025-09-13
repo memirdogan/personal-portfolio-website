@@ -112,14 +112,13 @@ const Projects = () => {
             >
               {/* Project Image */}
               {project.image && (
-                <div className="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-700">
+                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-700">
                   <OptimizedImage
                     src={project.image}
                     alt={`${project.title} - ${project.technologies.join(', ')} project screenshot`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
-                    width={400}
-                    height={250}
+                    fill
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>

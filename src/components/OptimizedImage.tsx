@@ -9,6 +9,7 @@ interface OptimizedImageProps {
   priority?: boolean;
   width?: number;
   height?: number;
+  fill?: boolean;
   onLoad?: () => void;
   onError?: () => void;
 }
@@ -21,6 +22,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   priority = false,
   width,
   height,
+  fill = false,
   onLoad,
   onError,
 }) => {
@@ -70,8 +72,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           isLoaded ? 'opacity-100' : 'opacity-0'
         } ${className}`}
         style={{
-          width: width ? `${width}px` : '100%',
-          height: height ? `${height}px` : 'auto',
+          width: fill ? '100%' : (width ? `${width}px` : '100%'),
+          height: fill ? '100%' : (height ? `${height}px` : 'auto'),
+          objectFit: fill ? 'cover' : undefined,
         }}
         // Preload critical images
         {...(priority && { fetchPriority: 'high' as const })}
