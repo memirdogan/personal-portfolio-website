@@ -22,7 +22,7 @@
 
 ## 🎯 About
 
-This is the personal portfolio website of **Musa Emir Doğan**, a Jr. Cloud & Platform Engineer at Sufle with AWS certification. The website showcases professional experience, skills, projects, and achievements in cloud computing, DevOps, and software development.
+This is the personal portfolio website of **Musa Emir Doğan**, a Cloud & Platform Engineer at Sufle with AWS certification. The website showcases professional experience, skills, projects, and achievements in cloud computing, DevOps, and software development.
 
 ### 🚀 Live Website
 Visit the live website: **[memir.codes](https://memir.codes)**

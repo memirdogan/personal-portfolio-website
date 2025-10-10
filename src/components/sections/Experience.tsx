@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -15,18 +14,28 @@ const experiences: ExperienceItem[] = [
     {
       company: 'Sufle Teknoloji Araştırma Geliştirme A.Ş.',
       location: 'İstanbul, Türkiye',
-      role: 'Jr. Cloud & Platform Engineer',
+      role: 'Cloud & Platform Engineer',
       period: 'Aralık 2024 - Günümüz',
       descriptionKeys: [
-        'experience.sufle.desc1',
-        'experience.sufle.desc2',
-        'experience.sufle.desc3',
-        'experience.sufle.desc4',
-        'experience.sufle.desc5',
-        'experience.sufle.desc6',
-        'experience.sufle.desc7',
-        'experience.sufle.desc8',
-        'experience.sufle.desc9'
+        'experience.sufle.fulltime.desc1',
+        'experience.sufle.fulltime.desc2',
+        'experience.sufle.fulltime.desc3',
+        'experience.sufle.fulltime.desc4',
+        'experience.sufle.fulltime.desc5'
+      ]
+    },
+    {
+      company: 'Sufle Teknoloji Araştırma Geliştirme A.Ş.',
+      location: 'İstanbul, Türkiye',
+      role: 'Cloud & Platform Engineer Intern',
+      period: 'Eylül 2024 - Aralık 2024',
+      descriptionKeys: [
+        'experience.sufle.intern.desc1',
+        'experience.sufle.intern.desc2',
+        'experience.sufle.intern.desc3',
+        'experience.sufle.intern.desc4',
+        'experience.sufle.intern.desc5',
+        'experience.sufle.intern.desc6'
       ]
     },
     {

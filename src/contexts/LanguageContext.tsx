@@ -95,9 +95,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 // Translations object
 const translations = {
   tr: {
-    // Meta
-    'meta.title': 'Musa Emir Doğan | Cloud & Platform Engineer | AWS Certified | DevOps',
-    'meta.description': 'Musa Emir Doğan - Sufle\'de Jr. Cloud & Platform Engineer. AWS Certified, Kubernetes, Docker, Terraform. Bulut altyapısı ve DevOps süreçlerinde deneyimli. Projelerimi inceleyin.',
+     // Meta
+     'meta.title': 'Musa Emir Doğan | Cloud & Platform Engineer @Sufle | DevOps | AWS Certified',
+     'meta.description': 'Musa Emir Doğan - Sufle\'de Cloud & Platform Engineer. AWS Certified, Kubernetes, Docker, Terraform. Bulut altyapısı ve DevOps süreçlerinde deneyimli. Projelerimi inceleyin.',
     // Navigation
     'nav.about': 'Hakkında',
     'nav.experience': 'Deneyim',
@@ -109,14 +109,14 @@ const translations = {
     'nav.contact': 'İletişim',
     
     // Hero Section
-    'hero.position': 'Jr. Cloud & Platform Engineer',
+    'hero.position': 'Cloud & Platform Engineer',
     'hero.description': 'AWS, Kubernetes ve Infrastructure as Code ile ölçeklenebilir bulut çözümleri geliştirme ve altyapı optimizasyonu',
     'hero.contactMe': 'İletişime Geç',
     
     // About Section
     'about.title': 'Hakkımda',
-    'about.role': 'Jr. Cloud & Platform Engineer',
-    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Jr. Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Cloud Practitioner sertifikasına sahibim.',
+    'about.role': 'Cloud & Platform Engineer',
+    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Cloud Practitioner sertifikasına sahibim.',
     'about.details': 'İstanbul Aydın Üniversitesi\'nde Yönetim Bilişim Sistemleri okuyorum ve 42 İstanbul\'da yazılım eğitimi aldım. Terraform, Kubernetes, Docker, Machine Learning ve bulut teknolojileri alanlarında uzmanlaşıyorum. Projelerimi açık kaynak olarak GitHub\'da yayınlıyorum: github.com/memirdogan',
     'about.highlight1.title': 'AWS Bulut Mühendisliği',
     'about.highlight1.desc': 'Amazon Web Services mimarisi ve çözümlerinde uzmanlaşma',
@@ -141,15 +141,24 @@ const translations = {
     // Experience Section
     'experience.title': 'Profesyonel Deneyim',
     'experience.subtitle': 'Modern DevOps uygulamaları ile bulut altyapısı inşa etme ve ölçeklendirme',
-    'experience.sufle.desc1': 'Terragrunt kullanarak AWS production altyapısını yönetme ve Infrastructure as Code iş akışlarını optimize etme',
-    'experience.sufle.desc2': 'MSSQL veritabanını EC2\'dan Amazon RDS\'e migrate ederek operasyonel yükü ve maliyetleri %50 azaltma',
-    'experience.sufle.desc3': 'Sıfırdan Kubernetes ortamı kurma: Karpenter, Metric-Server, Ingress Nginx, AWS Load Balancer Controller ve Cert-Manager entegrasyonu',
-    'experience.sufle.desc4': 'Bitbucket CI/CD pipeline\'ları ile AWS ECR entegrasyonu yaparak microservices deployment\'ını otomatikleştirme',
-    'experience.sufle.desc5': 'New Relic\'te logging, metrics ve alert sistemleri kurma, on-call rotasyonlarda performans izleme',
-    'experience.sufle.desc6': 'Fluent Bit - OpenSearch log forwarding ve parsing geliştirerek log analytics yeteneklerini artırma',
-    'experience.sufle.desc7': 'S3 static site migration\'ında VPN, PrivateLink ve Route 53 Private Hosted Zone entegrasyonu',
-    'experience.sufle.desc8': 'ECS blue/green deployment\'lar ve production workload\'lar için RDS Proxy troubleshooting',
-    'experience.sufle.desc9': 'Müşteri taleplerinin teslimat süresini %50 azaltarak takım verimliliğini artırma',
+    // Sufle Full-time Experience
+    'experience.sufle.fulltime.desc1': 'Terragrunt kullanarak AWS production altyapısını yönetme ve Infrastructure as Code iş akışlarını optimize etme',
+    'experience.sufle.fulltime.desc2': 'MSSQL veritabanını EC2\'dan Amazon RDS\'e migrate ederek operasyonel yükü ve maliyetleri %50 azaltma',
+    'experience.sufle.fulltime.desc3': 'Sıfırdan Kubernetes ortamı kurma: Karpenter, Metric-Server, Ingress Nginx, AWS Load Balancer Controller ve Cert-Manager entegrasyonu',
+    'experience.sufle.fulltime.desc4': 'Bitbucket CI/CD pipeline\'ları ile AWS ECR entegrasyonu yaparak microservices deployment\'ını otomatikleştirme',
+    'experience.sufle.fulltime.desc5': 'New Relic\'te logging, metrics ve alert sistemleri kurma, on-call rotasyonlarda performans izleme',
+    'experience.sufle.fulltime.desc6': 'Fluent Bit - OpenSearch log forwarding ve parsing geliştirerek log analytics yeteneklerini artırma',
+    'experience.sufle.fulltime.desc7': 'S3 static site migration\'ında VPN, PrivateLink ve Route 53 Private Hosted Zone entegrasyonu',
+    'experience.sufle.fulltime.desc8': 'ECS blue/green deployment\'lar ve production workload\'lar için RDS Proxy troubleshooting',
+    'experience.sufle.fulltime.desc9': 'Müşteri taleplerinin teslimat süresini %50 azaltarak takım verimliliğini artırma',
+    
+    // Sufle Internship Experience
+    'experience.sufle.intern.desc1': 'Terraform kullanarak altyapı otomasyonu gerçekleştirmek ve yeniden kullanılabilir yapılandırmalar oluşturmak',
+    'experience.sufle.intern.desc2': 'EC2, Load Balancer, NAT Gateway gibi AWS servislerini yapılandırarak güvenli ve optimize edilmiş mimariler tasarlamak',
+    'experience.sufle.intern.desc3': 'Nginx ve Python web sunucularını kullanarak statik dosyaların barındırılmasını sağlamak',
+    'experience.sufle.intern.desc4': 'Kubernetes ile yerel ortamda cluster yönetimi ve Helm chart oluşturma üzerine çalışmalar yapmak',
+    'experience.sufle.intern.desc5': 'Proje teslimlerinde Terraform state yönetimi ve versiyon kontrolü stratejileri uygulamak',
+    'experience.sufle.intern.desc6': 'Mentor rehberliğinde DevOps süreçleri ve CI/CD otomasyonları hakkında derinlemesine bilgi edinmek',
     'experience.renabyte.desc1': 'Sağlık teknolojileri alanında RenaByte Teknofest takımını kurma ve Co-Founder & Team Lead olarak yönetme',
     'experience.renabyte.desc2': 'TEKNOFEST 2025 İnsanlık Yararına Teknoloji yarışmasında İstanbul 1., genel 7. sırada yarı finale çıkma',
     'experience.renabyte.desc3': '8 kişilik multidisipliner takımın tüm cloud altyapısını tasarlama ve yönetme (renabyte.com)',
@@ -220,9 +229,9 @@ const translations = {
     'common.english': 'İngilizce'
   },
   en: {
-    // Meta
-    'meta.title': 'Musa Emir Doğan | Cloud & Platform Engineer | AWS Certified | DevOps',
-    'meta.description': 'Musa Emir Doğan - Jr. Cloud & Platform Engineer at Sufle. AWS Certified, experienced with Kubernetes, Docker, and Terraform. Skilled in cloud infrastructure and DevOps.',
+     // Meta
+     'meta.title': 'Musa Emir Doğan | Cloud & Platform Engineer @Sufle | DevOps | AWS Certified',
+     'meta.description': 'Musa Emir Doğan - Cloud & Platform Engineer at Sufle. AWS Certified, experienced with Kubernetes, Docker, and Terraform. Skilled in cloud infrastructure and DevOps.',
     // Navigation
     'nav.about': 'About',
     'nav.experience': 'Experience',
@@ -234,14 +243,14 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.position': 'Jr. Cloud & Platform Engineer',
+    'hero.position': 'Cloud & Platform Engineer',
     'hero.description': 'Building scalable cloud solutions and optimizing infrastructure with AWS, Kubernetes, and Infrastructure as Code',
     'hero.contactMe': 'Contact Me',
     
     // About Section
     'about.title': 'About Me',
-    'about.role': 'Jr. Cloud & Platform Engineer',
-    'about.intro': 'Hello! I\'m Musa Emir Doğan. I work as a Jr. Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Cloud Practitioner certification.',
+    'about.role': 'Cloud & Platform Engineer',
+    'about.intro': 'Hello! I\'m Musa Emir Doğan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Cloud Practitioner certification.',
     'about.details': 'I study Management Information Systems at Istanbul Aydın University and completed software training at 42 Istanbul. I specialize in Terraform, Kubernetes, Docker, Machine Learning, and cloud technologies. I publish my projects as open source on GitHub: github.com/memirdogan',
     'about.highlight1.title': 'AWS Cloud Engineering', 
     'about.highlight1.desc': 'Specializing in Amazon Web Services architecture and solutions',
@@ -266,15 +275,24 @@ const translations = {
     // Experience Section
     'experience.title': 'Professional Experience',
     'experience.subtitle': 'Building and scaling cloud infrastructure with modern DevOps practices',
-    'experience.sufle.desc1': 'Managed AWS production infrastructure using Terragrunt and optimized Infrastructure as Code workflows',
-    'experience.sufle.desc2': 'Migrated MSSQL database from EC2 to Amazon RDS, reducing operational overhead and costs by 50%',
-    'experience.sufle.desc3': 'Built Kubernetes environment from scratch: Karpenter, Metric-Server, Ingress Nginx, AWS Load Balancer Controller, and Cert-Manager integration',
-    'experience.sufle.desc4': 'Automated microservices deployment via Bitbucket CI/CD pipelines integrated with AWS ECR',
-    'experience.sufle.desc5': 'Implemented logging, metrics, and alert systems in New Relic, actively participating in on-call rotations for performance monitoring',
-    'experience.sufle.desc6': 'Developed and configured Fluent Bit – OpenSearch log forwarding and parsing, enhancing log analytics capabilities',
-    'experience.sufle.desc7': 'Participated in S3 static site migration behind VPN with PrivateLink and Route 53 Private Hosted Zone integration',
-    'experience.sufle.desc8': 'Contributed to ECS blue/green deployments and RDS Proxy troubleshooting for production workloads',
-    'experience.sufle.desc9': 'Improved team throughput by reducing delivery time for customer requests by 50%',
+    // Sufle Full-time Experience
+    'experience.sufle.fulltime.desc1': 'Managed AWS production infrastructure using Terragrunt and optimized Infrastructure as Code workflows',
+    'experience.sufle.fulltime.desc2': 'Migrated MSSQL database from EC2 to Amazon RDS, reducing operational overhead and costs by 50%',
+    'experience.sufle.fulltime.desc3': 'Built Kubernetes environment from scratch: Karpenter, Metric-Server, Ingress Nginx, AWS Load Balancer Controller, and Cert-Manager integration',
+    'experience.sufle.fulltime.desc4': 'Automated microservices deployment via Bitbucket CI/CD pipelines integrated with AWS ECR',
+    'experience.sufle.fulltime.desc5': 'Implemented logging, metrics, and alert systems in New Relic, actively participating in on-call rotations for performance monitoring',
+    'experience.sufle.fulltime.desc6': 'Developed and configured Fluent Bit – OpenSearch log forwarding and parsing, enhancing log analytics capabilities',
+    'experience.sufle.fulltime.desc7': 'Participated in S3 static site migration behind VPN with PrivateLink and Route 53 Private Hosted Zone integration',
+    'experience.sufle.fulltime.desc8': 'Contributed to ECS blue/green deployments and RDS Proxy troubleshooting for production workloads',
+    'experience.sufle.fulltime.desc9': 'Improved team throughput by reducing delivery time for customer requests by 50%',
+    
+    // Sufle Internship Experience
+    'experience.sufle.intern.desc1': 'Implemented infrastructure automation using Terraform and created reusable configurations',
+    'experience.sufle.intern.desc2': 'Configured AWS services such as EC2, Load Balancer, and NAT Gateway to design secure and optimized architectures',
+    'experience.sufle.intern.desc3': 'Hosted static files using Nginx and Python web servers',
+    'experience.sufle.intern.desc4': 'Worked on cluster management in local environment with Kubernetes and Helm chart creation',
+    'experience.sufle.intern.desc5': 'Applied Terraform state management and version control strategies in project deliveries',
+    'experience.sufle.intern.desc6': 'Gained in-depth knowledge about DevOps processes and CI/CD automation under mentor guidance',
     'experience.renabyte.desc1': 'Founded RenaByte Teknofest team in health technology sector, serving as Co-Founder & Team Lead',
     'experience.renabyte.desc2': 'Achieved TEKNOFEST 2025 semi-finals: 1st in Istanbul, 7th overall in Technology for Humanity competition',
     'experience.renabyte.desc3': 'Designed and managed entire cloud infrastructure for 8-person multidisciplinary team (renabyte.com)',

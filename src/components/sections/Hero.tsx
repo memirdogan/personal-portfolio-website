@@ -56,7 +56,7 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 opacity-20 animate-spin-slow" />
               <img
                 src="/pp/pp.webp"
-                alt="Musa Emir Doğan - Jr. Cloud & Platform Engineer professional profile photo"
+                alt="Musa Emir Doğan - Cloud & Platform Engineer professional profile photo"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
