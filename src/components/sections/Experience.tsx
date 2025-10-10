@@ -21,7 +21,11 @@ const experiences: ExperienceItem[] = [
         'experience.sufle.fulltime.desc2',
         'experience.sufle.fulltime.desc3',
         'experience.sufle.fulltime.desc4',
-        'experience.sufle.fulltime.desc5'
+        'experience.sufle.fulltime.desc5',
+        'experience.sufle.fulltime.desc6',
+        'experience.sufle.fulltime.desc7',
+        'experience.sufle.fulltime.desc8',
+        'experience.sufle.fulltime.desc9'
       ]
     },
     {
