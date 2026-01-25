@@ -25,7 +25,9 @@ const experiences: ExperienceItem[] = [
         'experience.sufle.fulltime.desc6',
         'experience.sufle.fulltime.desc7',
         'experience.sufle.fulltime.desc8',
-        'experience.sufle.fulltime.desc9'
+        'experience.sufle.fulltime.desc9',
+        'experience.sufle.fulltime.desc10',
+        'experience.sufle.fulltime.desc11'
       ]
     },
     {
@@ -64,7 +66,8 @@ const experiences: ExperienceItem[] = [
       descriptionKeys: [
         'experience.ybs.desc1',
         'experience.ybs.desc2',
-        'experience.ybs.desc3'
+        'experience.ybs.desc3',
+        'experience.ybs.desc4'
       ]
     },
     {
@@ -95,19 +98,19 @@ const Experience = () => {
   const translatePeriod = (period: string) => {
     if (isTR) return period;
     return period
-      .replace('Günümüz', 'Present')
-      .replace('Ocak', 'January')
-      .replace('Şubat', 'February')
-      .replace('Mart', 'March')
-      .replace('Nisan', 'April')
-      .replace('Mayıs', 'May')
-      .replace('Haziran', 'June')
-      .replace('Temmuz', 'July')
-      .replace('Ağustos', 'August')
-      .replace('Eylül', 'September')
-      .replace('Ekim', 'October')
-      .replace('Kasım', 'November')
-      .replace('Aralık', 'December');
+      .replaceAll('Günümüz', 'Present')
+      .replaceAll('Ocak', 'January')
+      .replaceAll('Şubat', 'February')
+      .replaceAll('Mart', 'March')
+      .replaceAll('Nisan', 'April')
+      .replaceAll('Mayıs', 'May')
+      .replaceAll('Haziran', 'June')
+      .replaceAll('Temmuz', 'July')
+      .replaceAll('Ağustos', 'August')
+      .replaceAll('Eylül', 'September')
+      .replaceAll('Ekim', 'October')
+      .replaceAll('Kasım', 'November')
+      .replaceAll('Aralık', 'December');
   };
   
   return (

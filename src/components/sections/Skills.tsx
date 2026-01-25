@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiCloud, FiBox, FiCode, FiServer, FiGitBranch, FiActivity, FiDatabase, FiShield, FiLayers } from 'react-icons/fi';
+import { FiCloud, FiBox, FiCode, FiServer, FiGitBranch, FiActivity, FiDatabase, FiShield, FiLayers, FiWifi } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface SkillCategory {
@@ -13,12 +13,17 @@ const getSkillCategories = (t: (k: string) => string): SkillCategory[] => [
   {
     titleKey: 'skills.cat.cloud',
     icon: <FiCloud className="w-6 h-6" />,
-    skills: ['Amazon Web Services (AWS)', 'DigitalOcean', 'Cloudflare' , 'Supabase', 'Appwrite']
+    skills: ['Amazon Web Services (AWS)', 'DigitalOcean', 'Cloudflare', 'Supabase', 'Appwrite']
   },
   {
     titleKey: 'skills.cat.aws',
     icon: <FiShield className="w-6 h-6" />,
     skills: ['EC2', 'S3', 'Lambda', 'SQS', 'SNS', 'ECR', 'Route53', 'RDS', 'CloudWatch', 'ECS', 'EKS', 'ALB', 'CloudFront']
+  },
+  {
+    titleKey: 'skills.cat.networking',
+    icon: <FiWifi className="w-6 h-6" />,
+    skills: ['VPC', 'Transit Gateway', 'Direct Connect', 'Route 53']
   },
   {
     titleKey: 'skills.cat.containers',
@@ -33,7 +38,7 @@ const getSkillCategories = (t: (k: string) => string): SkillCategory[] => [
   {
     titleKey: 'skills.cat.programming',
     icon: <FiCode className="w-6 h-6" />,
-    skills: ['Python', 'Bash Script', 'C', 'C++', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript']
+    skills: ['Python', 'Bash', 'C']
   },
   {
     titleKey: 'skills.cat.databases',
@@ -43,17 +48,12 @@ const getSkillCategories = (t: (k: string) => string): SkillCategory[] => [
   {
     titleKey: 'skills.cat.observability',
     icon: <FiActivity className="w-6 h-6" />,
-    skills: ['Prometheus', 'Grafana', 'New Relic', 'CloudWatch']
+    skills: ['New Relic', 'OpenSearch', 'Prometheus', 'Grafana']
   },
   {
     titleKey: 'skills.cat.vcs',
     icon: <FiGitBranch className="w-6 h-6" />,
     skills: ['Git', 'GitHub', 'GitHub Actions', 'Bitbucket', 'Jira', 'Confluence', 'Notion', 'Trello']
-  },
-  {
-    titleKey: 'skills.cat.ml',
-    icon: <FiLayers className="w-6 h-6" />,
-    skills: ['Machine Learning', 'NLP', 'LLMs', 'Data Analysis', 'Jupyter Notebook']
   }
 ];
 

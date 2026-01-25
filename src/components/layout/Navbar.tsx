@@ -22,9 +22,10 @@ const Navbar = () => {
     { label: t('nav.experience'), href: '#experience' },
     { label: t('nav.skills'), href: '#skills' },
     { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.publications'), href: '#publications' },
+    { label: t('nav.events'), href: '#events' },
     { label: t('nav.leadership'), href: '#leadership' },
     { label: t('nav.education'), href: '#education' },
-    { label: t('nav.publications'), href: '#publications' },
     { label: t('nav.contact'), href: '#contact' },
   ];
 
@@ -56,12 +57,12 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <motion.a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 rounded-full text-sm font-medium hover:text-accent-blue dark:hover:text-accent-purple transition-colors relative group"
+                className="px-3 py-2 rounded-full text-xs xl:text-sm font-medium hover:text-accent-blue dark:hover:text-accent-purple transition-colors relative group whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -92,10 +93,10 @@ const Navbar = () => {
 
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile/Tablet Menu Button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-full hover:bg-white/10 dark:hover:bg-black/10 transition-colors"
+            className="lg:hidden p-2 rounded-full hover:bg-white/10 dark:hover:bg-black/10 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Toggle menu"
@@ -117,7 +118,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden glass dark:glass-dark backdrop-blur-md"
+            className="lg:hidden glass dark:glass-dark backdrop-blur-md"
           >
             <div className="px-4 py-6 space-y-3">
               {navItems.map((item) => (

@@ -99,24 +99,24 @@ Visit the live website: **[memir.codes](https://memir.codes)**
 ### Installation
 
 1. **Clone the repository**
-   ```bash
+```bash
    git clone https://github.com/memirdogan/personal-website.git
    cd personal-website
-   ```
+```
 
 2. **Install dependencies**
-   ```bash
-   npm install
+```bash
+npm install
    # or
    yarn install
-   ```
+```
 
 3. **Start development server**
-   ```bash
-   npm run dev
+```bash
+npm run dev
    # or
    yarn dev
-   ```
+```
 
 4. **Open in browser**
    ```

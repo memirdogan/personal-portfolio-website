@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { FiCalendar, FiMapPin, FiAward } from 'react-icons/fi';
+import { FiCalendar, FiMapPin } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface LeadershipItem {
@@ -14,9 +13,22 @@ interface LeadershipItem {
 
 const leadershipItems: LeadershipItem[] = [
   {
+    organization: 'AWS User Group Istanbul',
+    location: 'İstanbul, Türkiye',
+    role: 'Co-Organizer / Community Lead',
+    period: 'Ekim 2025 - Günümüz',
+    descriptionKeys: [
+      'leadership.awsug.desc1',
+      'leadership.awsug.desc2',
+      'leadership.awsug.desc3',
+      'leadership.awsug.desc4'
+    ],
+    image: '/leadership-community/user-group-istanbul.webp'
+  },
+  {
     organization: 'RenaByte',
     location: 'İstanbul, Türkiye',
-          role: 'Co-Founder & Team Lead',
+    role: 'Co-Founder & Team Lead',
     period: 'Temmuz 2024 - Günümüz',
     descriptionKeys: [
       'leadership.renabyte.desc1',
@@ -55,6 +67,20 @@ const leadershipItems: LeadershipItem[] = [
       'leadership.t3ai.desc4'
     ],
     image: '/leadership-community/t3ai.webp'
+  },
+  {
+    organization: 'Student Mentorship Program',
+    location: 'İstanbul, Türkiye',
+    role: 'Mentor',
+    period: 'Ekim 2024 - Günümüz',
+    descriptionKeys: [
+      'leadership.sufle.desc1',
+      'leadership.sufle.desc2',
+      'leadership.sufle.desc3',
+      'leadership.sufle.desc4',
+      'leadership.sufle.desc5'
+    ],
+    image: '/leadership-community/mentor.webp'
   }
 ];
 
@@ -72,19 +98,19 @@ const Leadership = () => {
   const translatePeriod = (period: string) => {
     if (isTR) return period;
     return period
-      .replace('Günümüz', 'Present')
-      .replace('Ocak', 'January')
-      .replace('Şubat', 'February')
-      .replace('Mart', 'March')
-      .replace('Nisan', 'April')
-      .replace('Mayıs', 'May')
-      .replace('Haziran', 'June')
-      .replace('Temmuz', 'July')
-      .replace('Ağustos', 'August')
-      .replace('Eylül', 'September')
-      .replace('Ekim', 'October')
-      .replace('Kasım', 'November')
-      .replace('Aralık', 'December');
+      .replaceAll('Günümüz', 'Present')
+      .replaceAll('Ocak', 'January')
+      .replaceAll('Şubat', 'February')
+      .replaceAll('Mart', 'March')
+      .replaceAll('Nisan', 'April')
+      .replaceAll('Mayıs', 'May')
+      .replaceAll('Haziran', 'June')
+      .replaceAll('Temmuz', 'July')
+      .replaceAll('Ağustos', 'August')
+      .replaceAll('Eylül', 'September')
+      .replaceAll('Ekim', 'October')
+      .replaceAll('Kasım', 'November')
+      .replaceAll('Aralık', 'December');
   };
   
   return (

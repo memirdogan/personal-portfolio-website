@@ -38,6 +38,13 @@ const certifications: EducationItem[] = [
     location: 'AWS Cloud'
   },
   {
+    school: 'Amazon Web Services (AWS)',
+    degree: 'AWS Certified AI Practitioner',
+    period: 'Kasım 2025 - Kasım 2028',
+    type: 'certification',
+    location: 'AI/ML & Generative AI'
+  },
+  {
     school: 'Cambly Inc.',
     degree: 'Cambly Certificate of Accomplishment',
     period: 'Ağustos 2025',
@@ -60,19 +67,19 @@ const Education = () => {
   const translatePeriod = (period: string) => {
     if (isTR) return period;
     return period
-      .replace('Günümüz', 'Present')
-      .replace('Ocak', 'January')
-      .replace('Şubat', 'February')
-      .replace('Mart', 'March')
-      .replace('Nisan', 'April')
-      .replace('Mayıs', 'May')
-      .replace('Haziran', 'June')
-      .replace('Temmuz', 'July')
-      .replace('Ağustos', 'August')
-      .replace('Eylül', 'September')
-      .replace('Ekim', 'October')
-      .replace('Kasım', 'November')
-      .replace('Aralık', 'December');
+      .replaceAll('Günümüz', 'Present')
+      .replaceAll('Ocak', 'January')
+      .replaceAll('Şubat', 'February')
+      .replaceAll('Mart', 'March')
+      .replaceAll('Nisan', 'April')
+      .replaceAll('Mayıs', 'May')
+      .replaceAll('Haziran', 'June')
+      .replaceAll('Temmuz', 'July')
+      .replaceAll('Ağustos', 'August')
+      .replaceAll('Eylül', 'September')
+      .replaceAll('Ekim', 'October')
+      .replaceAll('Kasım', 'November')
+      .replaceAll('Aralık', 'December');
   };
   
   return (

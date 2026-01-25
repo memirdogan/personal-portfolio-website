@@ -11,11 +11,14 @@ const BrandLine = () => {
   // Brand logoları
   const brands: Brand[] = [
     { name: 'Sufle', logo: '/brands/sufle-logo.png', alt: 'Sufle Teknoloji logo' },
-    { name: 'AWS Cloud Practitioner', logo: '/brands/aws-certified.png', alt: 'AWS Certified Cloud Practitioner badge' },
+    { name: 'AWS Cloud Practitioner', logo: '/brands/aws-certified-cloud-practitioner.png', alt: 'AWS Certified Cloud Practitioner badge' },
+    { name: 'AWS AI Practitioner', logo: '/brands/aws-certified-ai-practitioner.png', alt: 'AWS Certified AI Practitioner badge' },
+    { name: 'AWS User Group Istanbul', logo: '/brands/user-group-istanbul-logo.png', alt: 'AWS User Group Istanbul logo' },
+    { name: 'AWS User Group Leader', logo: '/brands/usergroups-badges_leader-dark.png', alt: 'AWS User Group Leader badge' },
     { name: 'RenaByte', logo: '/brands/renabyte-logo.png', alt: 'RenaByte team logo' },
     { name: 'GDSC', logo: '/brands/gdsc-logo.png', alt: 'Google Developer Student Clubs logo' },
     { name: 'T3 AI', logo: '/brands/t3ai-logo.png', alt: 'T3 AI community logo' },
-    { name: '42 School', logo: '/brands/42-logo.png', alt: '42 School logo' },
+    { name: '42 Istanbul', logo: '/brands/42-logo.png', alt: '42 Istanbul School logo' },
   ];
 
   // Logoları beş kez tekrarlayarak kesintisiz döngü oluştur

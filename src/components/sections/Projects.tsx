@@ -29,21 +29,21 @@ const Projects = () => {
 
   const projects: ProjectItem[] = [
     {
-      title: 'RenaByte & Akbis Platform',
-      descriptionKey: 'projects.renabyte.desc',
-      technologies: ['React', 'Node.js', 'AWS', 'Docker', 'PostgreSQL'],
+      title: 'AKBIS (RenaByte) – Blood Donation Platform',
+      descriptionKey: 'projects.akbis.desc',
+      technologies: ['React', 'Node.js', 'AWS', 'Docker', 'PostgreSQL', 'DevOps'],
       liveUrl: 'https://renabyte.com',
       image: '/projects/renabyte.webp',
       featured: true
     },
     {
-      title: 'Sunoa E-Commerce Platform',
+      title: 'Sunoa – E-Commerce Platform',
       descriptionKey: 'projects.sunoa.desc',
-      technologies: ['Next.js 15', 'React 19', 'TypeScript', 'Tailwind CSS'],
+      technologies: ['Next.js 15', 'React 19', 'TypeScript', 'Tailwind CSS', 'JAMstack'],
       githubUrl: 'https://github.com/memirdogan/sunoa-ecommerce-website',
       liveUrl: 'https://sunoa.memir.codes',
       image: '/projects/sunoa.webp',
-      featured: false
+      featured: true
     },
     {
       title: 'Minikube-2048',

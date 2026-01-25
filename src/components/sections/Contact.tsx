@@ -68,7 +68,7 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-12"
           >
-                          <a
+            <a
               href="/resume/emir-dogan-resume.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 glass dark:glass-dark rounded-xl hover:scale-105 transition-transform"
