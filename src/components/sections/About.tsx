@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FiServer, FiCloud, FiCode, FiGithub } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -52,17 +51,15 @@ const About = () => {
               </p>
               
               {/* GitHub Link */}
-              <motion.a
+              <a
                 href="https://github.com/memirdogan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors font-medium"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 <FiGithub className="w-5 h-5" />
                 <span>github.com/memirdogan</span>
-              </motion.a>
+              </a>
             </motion.div>
 
             <div className="grid gap-6">

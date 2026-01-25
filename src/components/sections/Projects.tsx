@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiCode, FiGlobe } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -102,13 +101,9 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               {/* Project Image */}
               {project.image && (
@@ -136,7 +131,7 @@ const Projects = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors hover:scale-110 active:scale-90"
+                        className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                         onClick={() => {
                           trackEvent('external_link_click', 'engagement', `GitHub: ${project.githubUrl}`);
                           trackEvent('project_view', 'engagement', project.title);
@@ -150,7 +145,7 @@ const Projects = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 text-blue-600 dark:text-blue-400 transition-colors hover:scale-110 active:scale-90"
+                        className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 text-blue-600 dark:text-blue-400 transition-colors"
                         onClick={() => {
                           trackEvent('external_link_click', 'engagement', `Live Site: ${project.liveUrl}`);
                           trackEvent('project_view', 'engagement', project.title);
@@ -178,23 +173,17 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* GitHub Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <a
             href="https://github.com/memirdogan"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-full hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors font-medium hover:scale-105 active:scale-95 relative z-10"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-full hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors font-medium relative z-10"
             onClick={(e) => {
               console.log('View All Projects clicked');
             }}
@@ -202,7 +191,7 @@ const Projects = () => {
             <FiGithub className="w-5 h-5" />
             <span>{t('projects.viewMore')}</span>
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiCalendar, FiMapPin, FiChevronLeft, FiChevronRight, FiX, FiMaximize2 } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -143,8 +143,27 @@ const Events = () => {
     },
   ];
 
-  // Carousel navigation
-  const itemsPerView = 3; // Desktop'ta 3 kart göster
+  // Carousel navigation - responsive items per view
+  const getItemsPerView = () => {
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth < 768) return 1; // Mobile: 1 kart
+    if (window.innerWidth < 1024) return 2; // Tablet: 2 kart
+    return 3; // Desktop: 3 kart
+  };
+
+  const [itemsPerView, setItemsPerView] = useState(getItemsPerView());
+  
+  // Window resize listener
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerView(getItemsPerView());
+      // Reset slide if out of bounds
+      setCurrentSlide(prev => Math.min(prev, Math.max(0, events.length - getItemsPerView())));
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [events.length]);
+
   const maxSlide = Math.max(0, events.length - itemsPerView);
 
   const nextSlide = () => {
@@ -240,19 +259,16 @@ const Events = () => {
 
             {/* Slider */}
             <div className="overflow-hidden" ref={sliderRef}>
-              <motion.div
-                className="flex gap-6"
-                animate={{ x: `-${currentSlide * (100 / itemsPerView + 2)}%` }}
-                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              <div
+                className="flex gap-4 md:gap-6 transition-transform duration-300 ease-out"
+                style={{ 
+                  transform: `translateX(-${currentSlide * (100 / itemsPerView)}%)` 
+                }}
               >
                 {events.map((event, index) => (
-                  <motion.div
+                  <div
                     key={`${event.titleKey}-${index}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0 w-full md:w-[calc(33.333%-1rem)]"
+                    className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
                   >
                     {/* Event Image with Gallery */}
                     <div 
@@ -311,9 +327,9 @@ const Events = () => {
                         </span>
             </div>
           </div>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
           </div>
 
             {/* Dots Indicator */}

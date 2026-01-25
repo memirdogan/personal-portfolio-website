@@ -63,15 +63,15 @@
   }
 
   .glass {
-    @apply bg-white/80 backdrop-blur-lg border border-blue-100/30 shadow-xl hover:shadow-2xl transition-all duration-300;
+    @apply bg-white/80 backdrop-blur-lg border border-blue-100/30 shadow-xl hover:shadow-2xl transition-shadow duration-300;
   }
 
   .glass-dark {
-    @apply bg-slate-900/80 backdrop-blur-lg border border-blue-900/30 shadow-xl hover:shadow-2xl transition-all duration-300;
+    @apply bg-slate-900/80 backdrop-blur-lg border border-blue-900/30 shadow-xl hover:shadow-2xl transition-shadow duration-300;
   }
 
   .glass-card {
-    @apply bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border border-blue-200/30 dark:border-blue-500/10 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl p-6;
+    @apply bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border border-blue-200/30 dark:border-blue-500/10 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl p-6;
   }
 
   .btn {
@@ -95,7 +95,7 @@
   }
 
   .card {
-    @apply glass-card hover:scale-[1.02] transition-all duration-300;
+    @apply glass-card transition-shadow duration-300;
   }
 
   .card-title {
@@ -115,7 +115,7 @@
   }
 
   .skill-badge {
-    @apply px-4 py-2 rounded-lg bg-blue-100/50 dark:bg-blue-900/30 text-blue-900 dark:text-blue-300 border border-blue-200/50 dark:border-blue-700/50 hover:scale-105 transition-transform;
+    @apply px-4 py-2 rounded-lg bg-blue-100/50 dark:bg-blue-900/30 text-blue-900 dark:text-blue-300 border border-blue-200/50 dark:border-blue-700/50 transition-transform;
   }
 }
 
@@ -138,44 +138,18 @@
     background: radial-gradient(circle at center, rgba(30, 58, 138, 0.15) 0%, transparent 70%);
   }
 
-  .bg-morphing {
-    animation: morphing 20s ease-in-out infinite;
-    background-image: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-    background-size: 200% 200%;
+  /* Performance optimizations */
+  .group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
+    will-change: transform;
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-shine {
-    animation: shine 8s ease-in-out infinite;
-  }
-}
-
-@keyframes morphing {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes shine {
-  to {
-    background-position: 200% center;
+  img {
+    content-visibility: auto;
   }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
-}
-
-.animate-spin-slow {
-  animation: spin 8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }

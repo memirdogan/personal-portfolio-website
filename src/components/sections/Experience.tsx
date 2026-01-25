@@ -125,12 +125,8 @@ const Experience = () => {
 
         <div className="max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
               className="timeline-item"
             >
               <div className="timeline-dot" />
@@ -155,21 +151,17 @@ const Experience = () => {
 
                 <ul className="space-y-2">
                   {exp.descriptionKeys.map((descKey, i) => (
-                    <motion.li
+                    <li
                       key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 * i }}
-                      viewport={{ once: true }}
                       className="text-blue-900 dark:text-blue-100 flex items-start gap-2"
                     >
                       <span className="text-blue-600 dark:text-blue-400 mt-1.5">•</span>
                       {t(descKey)}
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

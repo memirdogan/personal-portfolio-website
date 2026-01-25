@@ -136,12 +136,8 @@ const Leadership = () => {
 
         <div className="space-y-8">
           {leadershipItems.map((item, index) => (
-            <motion.div
+            <div
               key={item.organization}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="glass dark:glass-dark rounded-xl overflow-hidden group"
             >
               <div className="grid md:grid-cols-2 gap-6">
@@ -150,9 +146,9 @@ const Leadership = () => {
                     src={item.image}
                     alt={`${item.organization} logo - ${item.role} leadership experience`}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6 md:p-8">
                   <div className="flex flex-col gap-4">
@@ -185,7 +181,7 @@ const Leadership = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
