@@ -23,6 +23,31 @@
     @apply relative overflow-hidden py-20 sm:py-32;
   }
 
+  h1, h2 {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    text-underline-offset: 0 !important;
+    text-decoration-thickness: 0 !important;
+  }
+
+  /* Fix for "g" letter underline issue with bg-clip-text */
+  h1 {
+    -webkit-text-decoration: none !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    text-underline-offset: 0 !important;
+    text-decoration-thickness: 0 !important;
+    text-underline-position: from-font !important;
+  }
+
+  /* Remove any pseudo-element underlines */
+  h1::before,
+  h1::after {
+    content: none !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+
   h2 {
     @apply text-4xl sm:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 dark:from-blue-300 dark:via-blue-400 dark:to-blue-300;
   }

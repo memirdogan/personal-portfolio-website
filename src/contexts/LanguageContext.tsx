@@ -110,6 +110,7 @@ const translations = {
     'nav.contact': 'İletişim',
     
     // Hero Section
+    'hero.name': 'Emir Doğan',
     'hero.position': 'Cloud & Platform Engineer',
     'hero.description': 'AWS, Kubernetes ve Infrastructure as Code ile ölçeklenebilir bulut çözümleri geliştirme ve altyapı optimizasyonu',
     'hero.contactMe': 'İletişime Geç',
@@ -247,6 +248,7 @@ const translations = {
     'contact.downloadResume': 'CV İndir',
     
     // Footer
+    'footer.name': 'Musa Emir Doğan',
     'footer.rights': 'Tüm hakları saklıdır.',
     
     // Common
@@ -257,8 +259,8 @@ const translations = {
   },
   en: {
      // Meta
-     'meta.title': 'Musa Emir Doğan | Cloud & Platform Engineer @Sufle | DevOps | AWS Certified',
-     'meta.description': 'Musa Emir Doğan - Cloud & Platform Engineer at Sufle. AWS Certified, experienced with Kubernetes, Docker, and Terraform. Skilled in cloud infrastructure and DevOps.',
+     'meta.title': 'Musa Emir Dogan | Cloud & Platform Engineer @Sufle | DevOps | AWS Certified',
+     'meta.description': 'Musa Emir Dogan - Cloud & Platform Engineer at Sufle. AWS Certified, experienced with Kubernetes, Docker, and Terraform. Skilled in cloud infrastructure and DevOps.',
     // Navigation
     'nav.about': 'About',
     'nav.experience': 'Experience',
@@ -271,6 +273,7 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
+    'hero.name': 'Emir Dogan',
     'hero.position': 'Cloud & Platform Engineer',
     'hero.description': 'Building scalable cloud solutions and optimizing infrastructure with AWS, Kubernetes, and Infrastructure as Code',
     'hero.contactMe': 'Contact Me',
@@ -278,7 +281,7 @@ const translations = {
     // About Section
     'about.title': 'About Me',
     'about.role': 'Cloud & Platform Engineer',
-    'about.intro': 'Hello! I\'m Musa Emir Doğan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Cloud Practitioner certification.',
+    'about.intro': 'Hello! I\'m Musa Emir Dogan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Cloud Practitioner certification.',
     'about.details': 'I study Management Information Systems at Istanbul Aydın University and completed software training at 42 Istanbul. I specialize in Terraform, Kubernetes, Docker, Machine Learning, and cloud technologies. I publish my projects as open source on GitHub: github.com/memirdogan',
     'about.highlight1.title': 'AWS Cloud Engineering', 
     'about.highlight1.desc': 'Specializing in Amazon Web Services architecture and solutions',
@@ -408,6 +411,7 @@ const translations = {
     'contact.downloadResume': 'Download Resume',
     
     // Footer
+    'footer.name': 'Musa Emir Dogan',
     'footer.rights': 'All rights reserved.',
     
     // Common

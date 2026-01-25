@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
             <p className="text-gray-600 dark:text-gray-400">
-              © {currentYear} Musa Emir Doğan. {t('footer.rights')}
+              © {currentYear} {t('footer.name')}. {t('footer.rights')}
             </p>
           </div>
 

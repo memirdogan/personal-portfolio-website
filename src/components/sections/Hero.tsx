@@ -73,8 +73,23 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h1 className="text-5xl sm:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 dark:from-blue-300 dark:via-blue-400 dark:to-blue-300">
-              Emir Doğan
+            <h1 
+              className="text-5xl sm:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 dark:from-blue-300 dark:via-blue-400 dark:to-blue-300"
+              style={{
+                textDecoration: 'none',
+                borderBottom: 'none',
+                textUnderlineOffset: '0',
+                WebkitTextDecoration: 'none',
+                textDecorationThickness: '0',
+                textUnderlinePosition: 'from-font',
+                lineHeight: '1.2',
+                paddingBottom: '0',
+                overflow: 'visible',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              {t('hero.name')}
             </h1>
             <div className="glass dark:glass-dark rounded-2xl p-6 mb-8 backdrop-blur-lg">
               <p className="text-xl sm:text-2xl text-blue-950 dark:text-blue-100 leading-relaxed">
