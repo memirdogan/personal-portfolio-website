@@ -70,6 +70,20 @@ const Events = () => {
 
   const events: EventItem[] = [
     {
+      titleKey: 'events.awsbedrock.title',
+      organization: 'AWS User Group Istanbul',
+      location: 'Tech Istanbul, Şişhane, İstanbul, Türkiye',
+      date: 'Ocak 2025',
+      descriptionKey: 'events.awsbedrock.desc',
+      images: [
+        '/events/ugi-ai-lab-290126/1.webp',
+        '/events/ugi-ai-lab-290126/2.webp',
+        '/events/ugi-ai-lab-290126/3.webp',
+        '/events/ugi-ai-lab-290126/4.webp'
+      ],
+      type: 'organizer'
+    },
+    {
       titleKey: 'events.druludag.title',
       organization: 'Uludağ Üniversitesi Veri Bilimi Topluluğu',
       location: 'Online',
