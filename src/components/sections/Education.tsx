@@ -33,7 +33,7 @@ const certifications: EducationItem[] = [
   {
     school: 'Amazon Web Services (AWS)',
     degree: 'AWS Certified Cloud Practitioner',
-    period: 'Nisan 2025 - Nisan 2028',
+    period: 'Nisan 2025 - Nisan 2029',
     type: 'certification',
     location: 'AWS Cloud'
   },
@@ -43,6 +43,13 @@ const certifications: EducationItem[] = [
     period: 'Kasım 2025 - Kasım 2028',
     type: 'certification',
     location: 'AI/ML & Generative AI'
+  },
+  {
+    school: 'Amazon Web Services (AWS)',
+    degree: 'AWS Certified Solutions Architect – Associate',
+    period: 'Nisan 2026 - Nisan 2029',
+    type: 'certification',
+    location: 'AWS Cloud'
   },
   {
     school: 'Cambly Inc.',

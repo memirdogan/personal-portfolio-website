@@ -70,6 +70,20 @@ const Events = () => {
 
   const events: EventItem[] = [
     {
+      titleKey: 'events.gameday.title',
+      organization: 'AWS User Group Istanbul',
+      location: 'İstanbul, Türkiye',
+      date: 'Mart 2026',
+      descriptionKey: 'events.gameday.desc',
+      images: [
+        '/events/ugi-gameday-europe-ist/1.webp',
+        '/events/ugi-gameday-europe-ist/2.webp',
+        '/events/ugi-gameday-europe-ist/3.webp',
+        '/events/ugi-gameday-europe-ist/4.webp'
+      ],
+      type: 'organizer'
+    },
+    {
       titleKey: 'events.awsbedrock.title',
       organization: 'AWS User Group Istanbul',
       location: 'Tech Istanbul, Şişhane, İstanbul, Türkiye',

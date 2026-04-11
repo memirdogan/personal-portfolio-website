@@ -118,7 +118,7 @@ const translations = {
     // About Section
     'about.title': 'Hakkımda',
     'about.role': 'Cloud & Platform Engineer',
-    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Cloud Practitioner sertifikasına sahibim.',
+    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Solutions Architect – Associate, AWS Certified AI Practitioner ve AWS Certified Cloud Practitioner sertifikalarına sahibim.',
     'about.details': 'İstanbul Aydın Üniversitesi\'nde Yönetim Bilişim Sistemleri okuyorum ve 42 İstanbul\'da yazılım eğitimi aldım. Terraform, Kubernetes, Docker, Machine Learning ve bulut teknolojileri alanlarında uzmanlaşıyorum. Projelerimi açık kaynak olarak GitHub\'da yayınlıyorum: github.com/memirdogan',
     'about.highlight1.title': 'AWS Bulut Mühendisliği',
     'about.highlight1.desc': 'Amazon Web Services mimarisi ve çözümlerinde uzmanlaşma',
@@ -221,6 +221,8 @@ const translations = {
     // Events Section
     'events.title': 'Etkinlikler',
     'events.subtitle': 'Katıldığım ve organize ettiğim teknoloji etkinlikleri, konferanslar ve workshop\'lar',
+    'events.gameday.title': 'AWS Community GameDay Europe İstanbul',
+    'events.gameday.desc': 'AWS Community GameDay Europe İstanbul\'u birlikte tamamladık 🚀\n\nAWS User Group Istanbul olarak Avrupa genelinde 50+ şehirle aynı anda gerçekleşen bu büyük GameDay\'de harika bir deneyim yaşadık 🌍\n\nGerçek AWS senaryoları, gerçek problemler ve tamamen takım çalışmasına dayalı bir ortamda; katılan tüm ekipler inanılmaz bir efor ve enerji ortaya koydu. Her bir takımın birlikte düşünmesi, çözmesi ve üretmesi etkinliğin en değerli kısmıydı 💪\n\nBu deneyimi bizimle paylaşan, akşamını ayırıp gelen ve katkı sağlayan herkese çok teşekkür ederiz 🙌\n\nEtkinliğin gerçekleşmesine katkıları için Amazon Web Services (AWS) ve AWS Community Europe ekibine teşekkür ederiz. Ayrıca etkinliğimize katılarak destek olan AWS Türkiye ekibine özel teşekkürler 👏\n\nYeni etkinliklerde tekrar görüşmek üzere — çok daha güçlü, çok daha kalabalık 🚀',
     'events.awsbedrock.title': 'AWS Bedrock ile Generative AI Workshop',
     'events.awsbedrock.desc': 'AWS User Group Istanbul olarak düzenlediğimiz AWS Bedrock ile Generative AI Workshop\'a katılarak bizlerle birlikte bu harika akşamı paylaşan herkese çok teşekkür ederiz 💙 🚀 🎉\n\nGenerative AI dünyasına birlikte adım attığımız bu etkinlikte;\n• AWS Bedrock üzerinde foundation modellerle çalışan bir uygulamayı hem teorik hem de pratik olarak ele aldık\n• Topluluk olarak bilgi paylaştık ve güzel sohbetler ettik 📚🤝🚀\n\nKatılımınız, sorularınız ve enerjiniz etkinliği bizim için çok daha keyifli hale getirdi. ✨\n\nTech Istanbul\'a bizi ağırladığı için kocaman teşekkürler 🙌🙌\n\nAyrıca quizimize katılan ve sürpriz ödüller kazanan herkesi de tekrar tebrik ederiz. 🎁\n\nBu sadece bir başlangıç! Yeni etkinliklerde, yeni konularda ve daha fazla hands-on içerikle tekrar buluşmak için sabırsızlanıyoruz 💙 🚀',
     'events.reinvent2025.title': 'AWS re:Invent 2025 Recap',
@@ -283,7 +285,7 @@ const translations = {
     // About Section
     'about.title': 'About Me',
     'about.role': 'Cloud & Platform Engineer',
-    'about.intro': 'Hello! I\'m Musa Emir Dogan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Cloud Practitioner certification.',
+    'about.intro': 'Hello! I\'m Musa Emir Dogan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Solutions Architect – Associate, AWS Certified AI Practitioner, and AWS Certified Cloud Practitioner certifications.',
     'about.details': 'I study Management Information Systems at Istanbul Aydın University and completed software training at 42 Istanbul. I specialize in Terraform, Kubernetes, Docker, Machine Learning, and cloud technologies. I publish my projects as open source on GitHub: github.com/memirdogan',
     'about.highlight1.title': 'AWS Cloud Engineering', 
     'about.highlight1.desc': 'Specializing in Amazon Web Services architecture and solutions',
@@ -386,6 +388,8 @@ const translations = {
     // Events Section
     'events.title': 'Events',
     'events.subtitle': 'Technology events, conferences, and workshops I\'ve participated in and organized',
+    'events.gameday.title': 'AWS Community GameDay Europe Istanbul',
+    'events.gameday.desc': 'We\'ve successfully completed AWS Community GameDay Europe Istanbul 🚀\n\nAs AWS User Group Istanbul, we had an amazing experience joining 50+ cities across Europe simultaneously in this large-scale GameDay 🌍\n\nWith real AWS scenarios, real challenges, and a fully team-driven environment, all participating teams put in incredible effort and energy. The most valuable part of the event was seeing every team think, solve, and build together 💪\n\nA huge thank you to everyone who joined us, spent their evening with us, and contributed to this experience 🙌\n\nWe would like to thank Amazon Web Services (AWS) and the AWS Community Europe team for making this event possible. Special thanks to the AWS Türkiye team for joining and supporting our event 👏\n\nLooking forward to seeing you again at our next events — stronger and bigger 🚀',
     'events.awsbedrock.title': 'AWS Bedrock Generative AI Workshop',
     'events.awsbedrock.desc': 'Thank you so much to everyone who joined us at the AWS Bedrock Generative AI Workshop organized by AWS User Group Istanbul and shared this wonderful evening with us 💙 🚀 🎉\n\nAt this event where we took our first steps into the Generative AI world together;\n• We covered an application working with foundation models on AWS Bedrock both theoretically and practically\n• We shared knowledge as a community and had great conversations 📚🤝🚀\n\nYour participation, questions, and energy made the event much more enjoyable for us. ✨\n\nHuge thanks to Tech Istanbul for hosting us 🙌🙌\n\nWe also congratulate everyone who participated in our quiz and won surprise prizes. 🎁\n\nThis is just the beginning! We\'re excited to meet again at new events, with new topics, and more hands-on content 💙 🚀',
     'events.reinvent2025.title': 'AWS re:Invent 2025 Recap',

@@ -13,6 +13,13 @@ interface Article {
 
 const articles: Article[] = [
   {
+    title: 'Amazon S3 Explained: Core Concepts and Use Cases',
+    link: 'https://www.sufle.io/blog/Amazon-S3-explained-core-concepts-and-use-cases',
+    pubDate: '2026-03-03',
+    publication: '🏢 Sufle Blog',
+    description: 'Amazon S3\'ün temel kavramları ve kullanım senaryolarının detaylı açıklaması. Bucket yapısı, depolama sınıfları ve gerçek dünya kullanım örnekleri.'
+  },
+  {
     title: 'AWS Serverless Essentials: A Beginner\'s Overview',
     link: 'https://medium.com/@musaemird/aws-serverless-essentials-a-beginners-overview-645cd5474041?source=user_profile_page---------0-------------732176f5912f----------------------',
     pubDate: '2024-12-25',
