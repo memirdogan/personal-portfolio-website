@@ -76,13 +76,13 @@ const Events = () => {
       date: 'Mayıs 2026',
       descriptionKey: 'events.communityday2026.desc',
       images: [
+        '/events/community-day-2026/3.webp',
         '/events/community-day-2026/1.webp',
         '/events/community-day-2026/2.webp',
-        '/events/community-day-2026/3.webp',
         '/events/community-day-2026/4.webp',
         '/events/community-day-2026/5.webp'
       ],
-      type: 'organizer'
+      type: 'participant'
     },
     {
       titleKey: 'events.gameday.title',
