@@ -70,6 +70,21 @@ const Events = () => {
 
   const events: EventItem[] = [
     {
+      titleKey: 'events.communityday2026.title',
+      organization: 'Cloud Türkiye & Sufle Teknoloji',
+      location: 'İstanbul, Türkiye',
+      date: 'Mayıs 2026',
+      descriptionKey: 'events.communityday2026.desc',
+      images: [
+        '/events/community-day-2026/1.webp',
+        '/events/community-day-2026/2.webp',
+        '/events/community-day-2026/3.webp',
+        '/events/community-day-2026/4.webp',
+        '/events/community-day-2026/5.webp'
+      ],
+      type: 'organizer'
+    },
+    {
       titleKey: 'events.gameday.title',
       organization: 'AWS User Group Istanbul',
       location: 'İstanbul, Türkiye',
