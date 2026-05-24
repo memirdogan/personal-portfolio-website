@@ -14,6 +14,7 @@ const BrandLine = () => {
     { name: 'AWS Cloud Practitioner', logo: '/brands/aws-certified-cloud-practitioner.png', alt: 'AWS Certified Cloud Practitioner badge' },
     { name: 'AWS AI Practitioner', logo: '/brands/aws-certified-ai-practitioner.png', alt: 'AWS Certified AI Practitioner badge' },
     { name: 'AWS Solutions Architect Associate', logo: '/brands/aws-certified-solutions-architect-associate.png', alt: 'AWS Certified Solutions Architect Associate badge' },
+    { name: 'AWS CloudOps Engineer Associate', logo: '/brands/aws-certified-cloudops-engineer-associate.png', alt: 'AWS Certified CloudOps Engineer Associate badge' },
     { name: 'AWS User Group Istanbul', logo: '/brands/user-group-istanbul-logo.png', alt: 'AWS User Group Istanbul logo' },
     { name: 'AWS User Group Leader', logo: '/brands/usergroups-badges_leader-dark.png', alt: 'AWS User Group Leader badge' },
     { name: 'RenaByte', logo: '/brands/renabyte-logo.png', alt: 'RenaByte team logo' },

@@ -32,8 +32,15 @@ const educationItems: EducationItem[] = [
 const certifications: EducationItem[] = [
   {
     school: 'Amazon Web Services (AWS)',
-    degree: 'AWS Certified Cloud Practitioner',
-    period: 'Nisan 2025 - Nisan 2029',
+    degree: 'AWS Certified CloudOps Engineer – Associate',
+    period: 'Mayıs 2026 - Mayıs 2029',
+    type: 'certification',
+    location: 'AWS Cloud'
+  },
+  {
+    school: 'Amazon Web Services (AWS)',
+    degree: 'AWS Certified Solutions Architect – Associate',
+    period: 'Nisan 2026 - Nisan 2029',
     type: 'certification',
     location: 'AWS Cloud'
   },
@@ -46,8 +53,8 @@ const certifications: EducationItem[] = [
   },
   {
     school: 'Amazon Web Services (AWS)',
-    degree: 'AWS Certified Solutions Architect – Associate',
-    period: 'Nisan 2026 - Nisan 2029',
+    degree: 'AWS Certified Cloud Practitioner',
+    period: 'Nisan 2025 - Mayıs 2029',
     type: 'certification',
     location: 'AWS Cloud'
   },

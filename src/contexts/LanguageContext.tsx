@@ -118,7 +118,7 @@ const translations = {
     // About Section
     'about.title': 'Hakkımda',
     'about.role': 'Cloud & Platform Engineer',
-    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Solutions Architect – Associate, AWS Certified AI Practitioner ve AWS Certified Cloud Practitioner sertifikalarına sahibim.',
+    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Solutions Architect – Associate, AWS Certified CloudOps Engineer – Associate, AWS Certified AI Practitioner ve AWS Certified Cloud Practitioner sertifikalarına sahibim.',
     'about.details': 'İstanbul Aydın Üniversitesi\'nde Yönetim Bilişim Sistemleri okuyorum ve 42 İstanbul\'da yazılım eğitimi aldım. Terraform, Kubernetes, Docker, Machine Learning ve bulut teknolojileri alanlarında uzmanlaşıyorum. Projelerimi açık kaynak olarak GitHub\'da yayınlıyorum: github.com/memirdogan',
     'about.highlight1.title': 'AWS Bulut Mühendisliği',
     'about.highlight1.desc': 'Amazon Web Services mimarisi ve çözümlerinde uzmanlaşma',
@@ -285,7 +285,7 @@ const translations = {
     // About Section
     'about.title': 'About Me',
     'about.role': 'Cloud & Platform Engineer',
-    'about.intro': 'Hello! I\'m Musa Emir Dogan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Solutions Architect – Associate, AWS Certified AI Practitioner, and AWS Certified Cloud Practitioner certifications.',
+    'about.intro': 'Hello! I\'m Musa Emir Dogan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Solutions Architect – Associate, AWS Certified CloudOps Engineer – Associate, AWS Certified AI Practitioner, and AWS Certified Cloud Practitioner certifications.',
     'about.details': 'I study Management Information Systems at Istanbul Aydın University and completed software training at 42 Istanbul. I specialize in Terraform, Kubernetes, Docker, Machine Learning, and cloud technologies. I publish my projects as open source on GitHub: github.com/memirdogan',
     'about.highlight1.title': 'AWS Cloud Engineering', 
     'about.highlight1.desc': 'Specializing in Amazon Web Services architecture and solutions',
