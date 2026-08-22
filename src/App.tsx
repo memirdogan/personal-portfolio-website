@@ -1,17 +1,20 @@
+import { lazy, Suspense } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Experience from './components/sections/Experience';
-import Skills from './components/sections/Skills';
-import Projects from './components/sections/Projects';
-import Publications from './components/sections/Publications';
-import Events from './components/sections/Events';
-import Education from './components/sections/Education';
-import Contact from './components/sections/Contact';
-import Leadership from './components/sections/Leadership';
 import BrandLine from './components/sections/BrandLine';
-import Footer from './components/layout/Footer';
+
+// Lazy load below-the-fold sections
+const About = lazy(() => import('./components/sections/About'));
+const Experience = lazy(() => import('./components/sections/Experience'));
+const Skills = lazy(() => import('./components/sections/Skills'));
+const Projects = lazy(() => import('./components/sections/Projects'));
+const Publications = lazy(() => import('./components/sections/Publications'));
+const Events = lazy(() => import('./components/sections/Events'));
+const Education = lazy(() => import('./components/sections/Education'));
+const Contact = lazy(() => import('./components/sections/Contact'));
+const Leadership = lazy(() => import('./components/sections/Leadership'));
+const Footer = lazy(() => import('./components/layout/Footer'));
 
 function App() {
   return (
@@ -22,17 +25,21 @@ function App() {
             <main role="main">
               <Hero />
               <BrandLine />
-              <About />
-              <Experience />
-              <Skills />
-              <Projects />
-              <Publications />
-              <Events />
-              <Leadership />
-              <Education />
-              <Contact />
+              <Suspense fallback={null}>
+                <About />
+                <Experience />
+                <Skills />
+                <Projects />
+                <Publications />
+                <Events />
+                <Leadership />
+                <Education />
+                <Contact />
+              </Suspense>
             </main>
-            <Footer />
+            <Suspense fallback={null}>
+              <Footer />
+            </Suspense>
         </div>
       </div>
     </LanguageProvider>

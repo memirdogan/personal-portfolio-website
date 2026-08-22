@@ -43,6 +43,7 @@ module.exports = {
         'gradient': 'gradient 8s linear infinite',
         'float': 'float 3s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'scroll': 'scroll 30s linear infinite',
       },
       keyframes: {
         gradient: {
@@ -62,6 +63,10 @@ module.exports = {
           '50%': {
             transform: 'translateY(-10px)',
           },
+        },
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
       backdropBlur: {

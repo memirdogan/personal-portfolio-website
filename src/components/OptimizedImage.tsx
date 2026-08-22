@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -39,28 +38,47 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     onError?.();
   };
 
+  if (fill) {
+    return (
+      <div className="relative overflow-hidden w-full h-full">
+        {!isLoaded && !hasError && (
+          <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse" />
+        )}
+        {hasError && (
+          <div className="absolute inset-0 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+            <span className="text-gray-400 text-sm">Image not found</span>
+          </div>
+        )}
+        <img
+          src={src}
+          alt={alt}
+          loading={loading}
+          onLoad={handleLoad}
+          onError={handleError}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
+          {...(priority && { fetchPriority: 'high' as const })}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {/* Loading placeholder */}
+    <div className="relative overflow-hidden inline-block">
       {!isLoaded && !hasError && (
-        <div 
+        <div
           className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse"
           style={{ width, height }}
         />
       )}
-      
-      {/* Error placeholder */}
       {hasError && (
-        <div 
+        <div
           className="absolute inset-0 bg-gray-100 dark:bg-gray-800 flex items-center justify-center"
           style={{ width, height }}
         >
           <span className="text-gray-400 text-sm">Image not found</span>
         </div>
       )}
-      
-      {/* Actual image */}
-      <motion.img
+      <img
         src={src}
         alt={alt}
         loading={loading}
@@ -68,15 +86,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         height={height}
         onLoad={handleLoad}
         onError={handleError}
-        className={`transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        } ${className}`}
-        style={{
-          width: fill ? '100%' : (width ? `${width}px` : '100%'),
-          height: fill ? '100%' : (height ? `${height}px` : 'auto'),
-          objectFit: fill ? 'cover' : undefined,
-        }}
-        // Preload critical images
+        className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
         {...(priority && { fetchPriority: 'high' as const })}
       />
     </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FiBookOpen, FiExternalLink, FiCalendar } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';

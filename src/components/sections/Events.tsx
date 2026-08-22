@@ -267,7 +267,7 @@ const Events = () => {
     <>
       <section id="events" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
       <div className="container">
         <motion.div

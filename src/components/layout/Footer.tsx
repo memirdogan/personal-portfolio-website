@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 

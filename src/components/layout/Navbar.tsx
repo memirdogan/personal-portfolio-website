@@ -47,40 +47,34 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <motion.a
+          <a
             href="#"
-            className="text-2xl font-display font-bold hover-underline"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="text-2xl font-display font-bold hover-underline hover:scale-105 active:scale-95 transition-transform"
           >
             <span className="text-gradient">ED</span>
-          </motion.a>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
-              <motion.a
+              <a
                 key={item.label}
                 href={item.href}
-                className="px-3 py-2 rounded-full text-xs xl:text-sm font-medium hover:text-accent-blue dark:hover:text-accent-purple transition-colors relative group whitespace-nowrap"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="px-3 py-2 rounded-full text-xs xl:text-sm font-medium hover:text-accent-blue dark:hover:text-accent-purple transition-colors relative group whitespace-nowrap hover:scale-105 active:scale-95"
               >
                 {item.label}
                 <span className="absolute inset-x-2 -bottom-px h-px bg-gradient-to-r from-accent-blue/0 via-accent-blue/70 to-accent-blue/0 dark:from-accent-purple/0 dark:via-accent-purple/70 dark:to-accent-purple/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.a>
+              </a>
             ))}
 
             {/* Language Toggle */}
-            <motion.button
+            <button
               onClick={toggleLanguage}
-              className={`p-2 rounded-full transition-colors ${
+              className={`p-2 rounded-full transition-all hover:scale-110 active:scale-90 ${
                 isScrolled
                   ? 'hover:bg-white/10 dark:hover:bg-black/10'
                   : 'hover:bg-black/5 dark:hover:bg-white/5'
               }`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
               aria-label={`Switch to ${language === 'tr' ? 'English' : 'Turkish'}`}
             >
               <div className="flex items-center gap-1">
@@ -89,16 +83,14 @@ const Navbar = () => {
                   {language.toUpperCase()}
                 </span>
               </div>
-            </motion.button>
+            </button>
 
           </div>
 
           {/* Mobile/Tablet Menu Button */}
-          <motion.button
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-full hover:bg-white/10 dark:hover:bg-black/10 transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            className="lg:hidden p-2 rounded-full hover:bg-white/10 dark:hover:bg-black/10 transition-colors hover:scale-110 active:scale-90"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -106,7 +98,7 @@ const Navbar = () => {
             ) : (
               <FiMenu className="w-6 h-6" />
             )}
-          </motion.button>
+          </button>
         </div>
       </div>
 
@@ -122,26 +114,24 @@ const Navbar = () => {
           >
             <div className="px-4 py-6 space-y-3">
               {navItems.map((item) => (
-                <motion.a
+                <a
                   key={item.label}
                   href={item.href}
-                  className="block px-4 py-2 rounded-full text-base font-medium hover:text-accent-blue dark:hover:text-accent-purple transition-colors"
+                  className="block px-4 py-2 rounded-full text-base font-medium hover:text-accent-blue dark:hover:text-accent-purple hover:translate-x-2 transition-all"
                   onClick={() => setIsMenuOpen(false)}
-                  whileHover={{ x: 10 }}
                 >
                   {item.label}
-                </motion.a>
+                </a>
               ))}
-              <motion.button
+              <button
                 onClick={() => {
                   toggleLanguage();
                   setIsMenuOpen(false);
                 }}
-                className="w-full text-left px-4 py-2 rounded-full text-base font-medium hover:text-accent-blue dark:hover:text-accent-purple transition-colors"
-                whileHover={{ x: 10 }}
+                className="w-full text-left px-4 py-2 rounded-full text-base font-medium hover:text-accent-blue dark:hover:text-accent-purple hover:translate-x-2 transition-all"
               >
                 🌐 {language === 'tr' ? 'English' : 'Türkçe'}
-              </motion.button>
+              </button>
             </div>
           </motion.div>
         )}
