@@ -15,7 +15,7 @@ const experiences: ExperienceItem[] = [
       company: 'Sufle Teknoloji Araştırma Geliştirme A.Ş.',
       location: 'İstanbul, Türkiye',
       role: 'Cloud & Platform Engineer',
-      period: 'Aralık 2024 - Günümüz',
+      period: 'Eylül 2024 - Günümüz',
       descriptionKeys: [
         'experience.sufle.fulltime.desc1',
         'experience.sufle.fulltime.desc2',
@@ -31,24 +31,10 @@ const experiences: ExperienceItem[] = [
       ]
     },
     {
-      company: 'Sufle Teknoloji Araştırma Geliştirme A.Ş.',
-      location: 'İstanbul, Türkiye',
-      role: 'Cloud & Platform Engineer Intern',
-      period: 'Eylül 2024 - Aralık 2024',
-      descriptionKeys: [
-        'experience.sufle.intern.desc1',
-        'experience.sufle.intern.desc2',
-        'experience.sufle.intern.desc3',
-        'experience.sufle.intern.desc4',
-        'experience.sufle.intern.desc5',
-        'experience.sufle.intern.desc6'
-      ]
-    },
-    {
       company: 'RenaByte',
       location: 'İstanbul, Türkiye',
       role: 'Co-Founder & Team Lead',
-      period: 'Temmuz 2024 - Günümüz',
+      period: 'Temmuz 2024 - Ekim 2025',
       descriptionKeys: [
         'experience.renabyte.desc1',
         'experience.renabyte.desc2',

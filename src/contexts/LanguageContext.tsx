@@ -118,8 +118,8 @@ const translations = {
     // About Section
     'about.title': 'Hakkımda',
     'about.role': 'Cloud & Platform Engineer',
-    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Solutions Architect – Associate, AWS Certified CloudOps Engineer – Associate, AWS Certified AI Practitioner ve AWS Certified Cloud Practitioner sertifikalarına sahibim.',
-    'about.details': 'İstanbul Aydın Üniversitesi\'nde Yönetim Bilişim Sistemleri okuyorum ve 42 İstanbul\'da yazılım eğitimi aldım. Terraform, Kubernetes, Docker, Machine Learning ve bulut teknolojileri alanlarında uzmanlaşıyorum. Projelerimi açık kaynak olarak GitHub\'da yayınlıyorum: github.com/memirdogan',
+    'about.intro': 'Merhaba! Ben Musa Emir Doğan. Sufle\'de Cloud & Platform Engineer olarak çalışıyorum. AWS production altyapılarını yönetiyor, Kubernetes ortamları kuruyor ve DevOps süreçlerini optimize ediyorum. AWS Certified Solutions Architect – Professional, AWS Certified Solutions Architect – Associate, AWS Certified CloudOps Engineer – Associate, AWS Certified AI Practitioner ve AWS Certified Cloud Practitioner sertifikalarına sahibim.',
+    'about.details': 'İstanbul Aydın Üniversitesi\'nde Yönetim Bilişim Sistemleri lisans programını onur derecesiyle tamamladım ve 42 İstanbul\'da yazılım eğitimi aldım. Terraform, Kubernetes, Docker, Machine Learning ve bulut teknolojileri alanlarında uzmanlaşıyorum. Projelerimi açık kaynak olarak GitHub\'da yayınlıyorum: github.com/memirdogan',
     'about.highlight1.title': 'AWS Bulut Mühendisliği',
     'about.highlight1.desc': 'Amazon Web Services mimarisi ve çözümlerinde uzmanlaşma',
     'about.highlight2.title': 'DevOps Uygulamaları',
@@ -156,13 +156,6 @@ const translations = {
     'experience.sufle.fulltime.desc10': 'Gateway Load Balancer (GWLB) ile AWS üzerinde Palo Alto NGFW deploy etme ve işletme',
     'experience.sufle.fulltime.desc11': 'Müşteri taleplerinin teslimat süresini %50 azaltarak takım verimliliğini artırma',
     
-    // Sufle Internship Experience
-    'experience.sufle.intern.desc1': 'Terraform kullanarak altyapı otomasyonu gerçekleştirmek ve yeniden kullanılabilir yapılandırmalar oluşturmak',
-    'experience.sufle.intern.desc2': 'EC2, Load Balancer, NAT Gateway gibi AWS servislerini yapılandırarak güvenli ve optimize edilmiş mimariler tasarlamak',
-    'experience.sufle.intern.desc3': 'Nginx ve Python web sunucularını kullanarak statik dosyaların barındırılmasını sağlamak',
-    'experience.sufle.intern.desc4': 'Kubernetes ile yerel ortamda cluster yönetimi ve Helm chart oluşturma üzerine çalışmalar yapmak',
-    'experience.sufle.intern.desc5': 'Proje teslimlerinde Terraform state yönetimi ve versiyon kontrolü stratejileri uygulamak',
-    'experience.sufle.intern.desc6': 'Mentor rehberliğinde DevOps süreçleri ve CI/CD otomasyonları hakkında derinlemesine bilgi edinmek',
     'experience.renabyte.desc1': 'Sağlık teknolojileri alanında RenaByte Teknofest takımını kurma ve Co-Founder & Team Lead olarak yönetme',
     'experience.renabyte.desc2': 'TEKNOFEST 2025 İnsanlık Yararına Teknoloji yarışmasında İstanbul 1., genel 7. sırada yarı finale çıkma',
     'experience.renabyte.desc3': '8 kişilik multidisipliner takımın tüm cloud altyapısını tasarlama ve yönetme (renabyte.com)',
@@ -221,6 +214,8 @@ const translations = {
     // Events Section
     'events.title': 'Etkinlikler',
     'events.subtitle': 'Katıldığım ve organize ettiğim teknoloji etkinlikleri, konferanslar ve workshop\'lar',
+    'events.kcd2026.title': 'KCD Istanbul 2026',
+    'events.kcd2026.desc': 'KCD 2026 yine oldukça keyifli geçti ❤️\n\nHer etkinlikte olduğu gibi bu kez de teknik içeriklerin yanında community ile bir araya gelmek, yeni insanlarla tanışmak ve sektörden farklı isimlerle sohbet etmek etkinliğin en güzel taraflarından biriydi.\n\nBir parçası olmaktan keyif aldığım bu topluluğu bir araya getiren ve etkinlik için emek veren tüm Kubernetes Community Days Istanbul ekibine, özellikle Alp Kahvecioglu ve Ceyda Düzgeç\'e çok teşekkür ederim. 🙌',
     'events.communityday2026.title': 'AWS Community Day Türkiye 2026',
     'events.communityday2026.desc': 'Yeniden AWS Community Day Türkiye heyecanı diyebilir miyiz? 🚀\n\nBu sene Sufle ekibiyle birlikte etkinlik organizasyonunda bulunmak çok keyifliydi. Gün boyunca birçok değerli sunumu dinleme, AWS ekosistemindeki güncel yaklaşımları takip etme ve toplulukla yeniden bir araya gelme fırsatı bulduk.\n\nÖzellikle Gökay Öztürk\'ün Kiro sunumu benim için günün en başarılı ve keyifli oturumlarından biriydi. Hem teknik içeriği hem de anlatımıyla oldukça değerliydi 🫶\n\nAyrıca standımıza uğrayan, sohbet eden, deneyimlerini paylaşan ve sorularıyla katkı sağlayan herkese çok teşekkür ederim. AWS topluluğunun enerjisini, paylaşım kültürünü ve birlikte öğrenme motivasyonunu bir kez daha görmek çok güzeldi.\n\nEmeği geçen tüm organizasyon ekibine, konuşmacılara, sponsorlara, katılımcılara ve Cloud Türkiye\'ye teşekkürler 🙌',
     'events.gameday.title': 'AWS Community GameDay Europe İstanbul',
@@ -287,8 +282,8 @@ const translations = {
     // About Section
     'about.title': 'About Me',
     'about.role': 'Cloud & Platform Engineer',
-    'about.intro': 'Hello! I\'m Musa Emir Dogan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Solutions Architect – Associate, AWS Certified CloudOps Engineer – Associate, AWS Certified AI Practitioner, and AWS Certified Cloud Practitioner certifications.',
-    'about.details': 'I study Management Information Systems at Istanbul Aydın University and completed software training at 42 Istanbul. I specialize in Terraform, Kubernetes, Docker, Machine Learning, and cloud technologies. I publish my projects as open source on GitHub: github.com/memirdogan',
+    'about.intro': 'Hello! I\'m Musa Emir Dogan. I work as a Cloud & Platform Engineer at Sufle. I manage AWS production infrastructures, set up Kubernetes environments, and optimize DevOps processes. I hold AWS Certified Solutions Architect – Professional, AWS Certified Solutions Architect – Associate, AWS Certified CloudOps Engineer – Associate, AWS Certified AI Practitioner, and AWS Certified Cloud Practitioner certifications.',
+    'about.details': 'I graduated with honors from the Management Information Systems bachelor\'s program at Istanbul Aydın University and completed software training at 42 Istanbul. I specialize in Terraform, Kubernetes, Docker, Machine Learning, and cloud technologies. I publish my projects as open source on GitHub: github.com/memirdogan',
     'about.highlight1.title': 'AWS Cloud Engineering', 
     'about.highlight1.desc': 'Specializing in Amazon Web Services architecture and solutions',
     'about.highlight2.title': 'DevOps Practices',
@@ -325,13 +320,6 @@ const translations = {
     'experience.sufle.fulltime.desc10': 'Deployed and operated Palo Alto NGFW on AWS with Gateway Load Balancer (GWLB)',
     'experience.sufle.fulltime.desc11': 'Increase team efficiency by reducing customer request delivery time by 50%',
     
-    // Sufle Internship Experience
-    'experience.sufle.intern.desc1': 'Implemented infrastructure automation using Terraform and created reusable configurations',
-    'experience.sufle.intern.desc2': 'Configured AWS services such as EC2, Load Balancer, and NAT Gateway to design secure and optimized architectures',
-    'experience.sufle.intern.desc3': 'Hosted static files using Nginx and Python web servers',
-    'experience.sufle.intern.desc4': 'Worked on cluster management in local environment with Kubernetes and Helm chart creation',
-    'experience.sufle.intern.desc5': 'Applied Terraform state management and version control strategies in project deliveries',
-    'experience.sufle.intern.desc6': 'Gained in-depth knowledge about DevOps processes and CI/CD automation under mentor guidance',
     'experience.renabyte.desc1': 'Founded RenaByte Teknofest team in health technology sector, serving as Co-Founder & Team Lead',
     'experience.renabyte.desc2': 'Achieved TEKNOFEST 2025 semi-finals: 1st in Istanbul, 7th overall in Technology for Humanity competition',
     'experience.renabyte.desc3': 'Designed and managed entire cloud infrastructure for 8-person multidisciplinary team (renabyte.com)',
@@ -390,6 +378,8 @@ const translations = {
     // Events Section
     'events.title': 'Events',
     'events.subtitle': 'Technology events, conferences, and workshops I\'ve participated in and organized',
+    'events.kcd2026.title': 'KCD Istanbul 2026',
+    'events.kcd2026.desc': 'KCD 2026 was once again a truly enjoyable experience ❤️\n\nAs with every event, alongside the technical content, meeting with the community, connecting with new people, and having conversations with different names from the industry was one of the best parts of the event.\n\nMany thanks to the entire Kubernetes Community Days Istanbul team who brought this community I love being part of together and put in so much effort for the event, especially to Alp Kahvecioglu and Ceyda Düzgeç. 🙌',
     'events.communityday2026.title': 'AWS Community Day Turkey 2026',
     'events.communityday2026.desc': 'Can we say AWS Community Day Turkey excitement is back? 🚀\n\nThis year, it was a great pleasure to be part of the event organization with the Sufle team. Throughout the day, we had the opportunity to listen to many valuable presentations, follow current approaches in the AWS ecosystem, and reunite with the community.\n\nIn particular, Gökay Öztürk\'s Kiro presentation was one of the most successful and enjoyable sessions of the day for me. It was very valuable both in terms of technical content and delivery 🫶\n\nI also want to thank everyone who stopped by our booth, chatted with us, shared their experiences, and contributed with their questions. It was wonderful to see the energy of the AWS community, its sharing culture, and the motivation to learn together once again.\n\nThanks to the entire organizing team, speakers, sponsors, participants, and Cloud Türkiye for their efforts 🙌',
     'events.gameday.title': 'AWS Community GameDay Europe Istanbul',

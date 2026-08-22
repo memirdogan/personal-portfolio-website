@@ -70,6 +70,21 @@ const Events = () => {
 
   const events: EventItem[] = [
     {
+      titleKey: 'events.kcd2026.title',
+      organization: 'Kubernetes Community Days Istanbul',
+      location: 'İstanbul, Türkiye',
+      date: 'Mayıs 2026',
+      descriptionKey: 'events.kcd2026.desc',
+      images: [
+        '/events/kcd-2026/1.webp',
+        '/events/kcd-2026/2.webp',
+        '/events/kcd-2026/3.webp',
+        '/events/kcd-2026/4.webp',
+        '/events/kcd-2026/5.webp'
+      ],
+      type: 'participant'
+    },
+    {
       titleKey: 'events.communityday2026.title',
       organization: 'Cloud Türkiye & Sufle Teknoloji',
       location: 'İstanbul, Türkiye',

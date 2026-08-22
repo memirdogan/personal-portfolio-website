@@ -8,7 +8,8 @@ interface LeadershipItem {
   role: string;
   period: string;
   descriptionKeys: string[];
-  image?: string;  // We'll add the image URL later when you provide it
+  image?: string;
+  featured?: boolean;
 }
 
 const leadershipItems: LeadershipItem[] = [
@@ -23,13 +24,14 @@ const leadershipItems: LeadershipItem[] = [
       'leadership.awsug.desc3',
       'leadership.awsug.desc4'
     ],
-    image: '/leadership-community/user-group-istanbul.webp'
+    image: '/leadership-community/user-group-istanbul.webp',
+    featured: true
   },
   {
     organization: 'RenaByte',
     location: 'İstanbul, Türkiye',
     role: 'Co-Founder & Team Lead',
-    period: 'Temmuz 2024 - Günümüz',
+    period: 'Temmuz 2024 - Ekim 2025',
     descriptionKeys: [
       'leadership.renabyte.desc1',
       'leadership.renabyte.desc2',
@@ -38,7 +40,23 @@ const leadershipItems: LeadershipItem[] = [
       'leadership.renabyte.desc5',
       'leadership.renabyte.desc6'
     ],
-    image: '/leadership-community/renabyte.webp'
+    image: '/leadership-community/renabyte.webp',
+    featured: true
+  },
+  {
+    organization: 'Student Mentorship Program',
+    location: 'İstanbul, Türkiye',
+    role: 'Mentor',
+    period: 'Ekim 2024 - Günümüz',
+    descriptionKeys: [
+      'leadership.sufle.desc1',
+      'leadership.sufle.desc2',
+      'leadership.sufle.desc3',
+      'leadership.sufle.desc4',
+      'leadership.sufle.desc5'
+    ],
+    image: '/leadership-community/mentor.webp',
+    featured: true
   },
   {
     organization: 'Google Developer Student Clubs',
@@ -53,7 +71,8 @@ const leadershipItems: LeadershipItem[] = [
       'leadership.gdsc.desc5',
       'leadership.gdsc.desc6'
     ],
-    image: '/leadership-community/gdsc.webp'
+    image: '/leadership-community/gdsc.webp',
+    featured: false
   },
   {
     organization: 'T3 AI\'LE',
@@ -66,21 +85,8 @@ const leadershipItems: LeadershipItem[] = [
       'leadership.t3ai.desc3',
       'leadership.t3ai.desc4'
     ],
-    image: '/leadership-community/t3ai.webp'
-  },
-  {
-    organization: 'Student Mentorship Program',
-    location: 'İstanbul, Türkiye',
-    role: 'Mentor',
-    period: 'Ekim 2024 - Günümüz',
-    descriptionKeys: [
-      'leadership.sufle.desc1',
-      'leadership.sufle.desc2',
-      'leadership.sufle.desc3',
-      'leadership.sufle.desc4',
-      'leadership.sufle.desc5'
-    ],
-    image: '/leadership-community/mentor.webp'
+    image: '/leadership-community/t3ai.webp',
+    featured: false
   }
 ];
 
@@ -112,13 +118,15 @@ const Leadership = () => {
       .replaceAll('Kasım', 'November')
       .replaceAll('Aralık', 'December');
   };
+
+  const featuredItems = leadershipItems.filter(item => item.featured);
+  const otherItems = leadershipItems.filter(item => !item.featured);
   
   return (
     <section id="leadership" className="py-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
-      <div className="container">
+      <div className="container relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,54 +142,91 @@ const Leadership = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {leadershipItems.map((item, index) => (
-            <div
+        {/* Featured - Compact cards with image on left */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
+          {featuredItems.map((item, index) => (
+            <motion.div
               key={item.organization}
-              className="glass dark:glass-dark rounded-xl overflow-hidden group"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300"
             >
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative aspect-[16/9] md:aspect-auto overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={`${item.organization} logo - ${item.role} leadership experience`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="p-6 md:p-8">
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-display font-bold text-accent-blue dark:text-accent-purple">
-                        {item.organization}
-                      </h3>
-                      <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-1">
-                        {item.role}
-                      </h4>
-                      <div className="flex flex-wrap gap-4 mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        <div className="flex items-center gap-1">
-                          <FiCalendar className="w-4 h-4" />
-                          <span>{translatePeriod(item.period)}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <FiMapPin className="w-4 h-4" />
-                          <span>{translateLocation(item.location)}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                      {item.descriptionKeys.map((descKey, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <span className="text-accent-blue dark:text-accent-purple mt-1.5">•</span>
-                          <span className="leading-relaxed">{t(descKey)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              {/* Image */}
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.organization}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4">
+                  <h3 className="text-base font-bold text-white leading-tight">
+                    {item.organization}
+                  </h3>
+                  <p className="text-xs text-white/80 mt-0.5">{item.role}</p>
                 </div>
               </div>
-            </div>
+
+              {/* Content */}
+              <div className="p-4">
+                <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400 mb-3">
+                  <span className="flex items-center gap-1">
+                    <FiCalendar className="w-3 h-3" />
+                    {translatePeriod(item.period)}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <FiMapPin className="w-3 h-3" />
+                    {translateLocation(item.location)}
+                  </span>
+                </div>
+                <ul className="space-y-1.5">
+                  {item.descriptionKeys.map((descKey, i) => (
+                    <li key={i} className="text-xs text-gray-600 dark:text-gray-300 flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5 flex-shrink-0">•</span>
+                      <span>{t(descKey)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Other communities - Compact row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {otherItems.map((item, index) => (
+            <motion.div
+              key={item.organization}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: index * 0.08 }}
+              className="group flex items-center gap-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:shadow-md hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300"
+            >
+              <div className="flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+                <img
+                  src={item.image}
+                  alt={item.organization}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-sm font-semibold text-gray-900 dark:text-white truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {item.organization}
+                </h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400">{item.role}</p>
+                <div className="flex items-center gap-2 mt-1 text-[11px] text-gray-400 dark:text-gray-500">
+                  <span className="flex items-center gap-0.5">
+                    <FiCalendar className="w-3 h-3" />
+                    {translatePeriod(item.period)}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -189,4 +234,4 @@ const Leadership = () => {
   );
 };
 
-export default Leadership; 
+export default Leadership;
