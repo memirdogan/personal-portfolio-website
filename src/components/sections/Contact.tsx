@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -47,11 +47,7 @@ const Contact = () => {
   return (
     <section id="contact" className="bg-white dark:bg-slate-900">
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
           className="max-w-xl mx-auto text-center"
         >
           <h2>{t('contact.title')}</h2>
@@ -86,7 +82,7 @@ const Contact = () => {
               </a>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

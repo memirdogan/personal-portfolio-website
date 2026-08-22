@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FiArrowDown, FiMail } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -16,14 +15,9 @@ const Hero = () => {
       <div className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-indigo-200/30 dark:bg-indigo-900/20 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center animate-fade-in">
           {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6"
-          >
+          <div className="mb-6">
             <div className="w-32 h-32 mx-auto rounded-full ring-2 ring-slate-200 dark:ring-slate-700 ring-offset-4 ring-offset-white dark:ring-offset-slate-900 overflow-hidden">
               <img
                 src="/pp/pp.webp"
@@ -35,14 +29,10 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* Name & Role */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.5 }}
-          >
+          <div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">
               {t('hero.name')}
             </h1>
@@ -52,15 +42,10 @@ const Hero = () => {
             <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto mb-8">
               {t('hero.description')}
             </p>
-          </motion.div>
+          </div>
 
           {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#contact"
               className="btn btn-primary gap-2"
@@ -75,7 +60,7 @@ const Hero = () => {
               {t('nav.about')}
               <FiArrowDown className="w-4 h-4" />
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

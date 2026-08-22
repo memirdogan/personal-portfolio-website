@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import { FiBook, FiAward, FiCalendar, FiMapPin, FiShield, FiExternalLink } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -145,11 +145,7 @@ const Education = () => {
         </div>
 
         {/* Education Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+        <div
           className="mb-8"
         >
           <h3 className="card-title flex items-center gap-2 mb-4">
@@ -159,12 +155,8 @@ const Education = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {educationItems.map((item, index) => (
-              <motion.div
+              <div
                 key={item.school}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="relative bg-white dark:bg-gray-900 rounded-xl border border-blue-100 dark:border-blue-900/40 p-5 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
@@ -190,17 +182,13 @@ const Education = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Certifications Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
+        <div
         >
           <div className="flex items-center justify-between mb-4">
             <h3 className="card-title flex items-center gap-2">
@@ -220,12 +208,8 @@ const Education = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map((cert, index) => (
-              <motion.div
+              <div
                 key={cert.degree}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                viewport={{ once: true }}
                 className="group relative bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300 hover:-translate-y-0.5"
               >
                 {cert.credlyUrl && (
@@ -278,10 +262,10 @@ const Education = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

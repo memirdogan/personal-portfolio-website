@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import { FiCalendar, FiMapPin } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 

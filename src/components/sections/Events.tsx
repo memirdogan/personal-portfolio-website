@@ -298,20 +298,14 @@ const Events = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-8"
-        >
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">
               <span className="text-gradient">🎤 {t('events.title')}</span>
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               {t('events.subtitle')}
           </p>
-        </motion.div>
+        </div>
 
           {/* Carousel Container */}
           <div className="relative">
@@ -592,9 +586,10 @@ const Events = () => {
             {/* Main Image */}
             <motion.img
               key={currentImageIndex}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               src={selectedEvent.images[currentImageIndex]}
               alt={`${t(selectedEvent.titleKey)} - ${currentImageIndex + 1}`}
               className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"

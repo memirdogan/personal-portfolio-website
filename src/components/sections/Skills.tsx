@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import { FiCloud, FiBox, FiCode, FiServer, FiGitBranch, FiActivity, FiDatabase } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -50,11 +50,7 @@ const Skills = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
           className="text-center mb-8"
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3">
@@ -63,16 +59,12 @@ const Skills = () => {
           <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             {t('skills.subtitle')}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {skillCategories.map((category, index) => (
-            <motion.div
+            <div
               key={category.titleKey}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.06 }}
               className="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-3">
@@ -93,7 +85,7 @@ const Skills = () => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

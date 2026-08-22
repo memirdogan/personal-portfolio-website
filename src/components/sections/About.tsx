@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import { FiCloud, FiServer, FiCode, FiGithub, FiArrowUpRight } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -28,11 +28,7 @@ const About = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* Text content - takes 3 cols */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <div
             className="lg:col-span-3"
           >
             <h2 className="!text-left">{t('about.title')}</h2>
@@ -53,17 +49,13 @@ const About = () => {
               <span>github.com/memirdogan</span>
               <FiArrowUpRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
             </a>
-          </motion.div>
+          </div>
 
           {/* Highlight cards - takes 2 cols */}
           <div className="lg:col-span-2 space-y-4">
             {highlights.map((item, index) => (
-              <motion.div
+              <div
                 key={item.title}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800"
               >
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
@@ -73,7 +65,7 @@ const About = () => {
                   <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-1">{item.title}</h4>
                   <p className="text-sm text-slate-500 dark:text-slate-400">{item.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

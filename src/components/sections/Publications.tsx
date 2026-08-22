@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import { FiBookOpen, FiExternalLink, FiCalendar } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -56,15 +56,11 @@ const Publications = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {articles.map((article, index) => (
-                <motion.a
+                <a
                   key={article.link}
                   href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="card group hover:shadow-lg dark:hover:shadow-blue-900/20 transition-all duration-300"
                 >
                   <div className="flex flex-col h-full">
@@ -98,7 +94,7 @@ const Publications = () => {
                       <FiExternalLink className="w-5 h-5 text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   </div>
-                </motion.a>
+                </a>
               ))}
         </div>
       </div>

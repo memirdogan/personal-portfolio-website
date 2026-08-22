@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+
 import { FiGithub, FiExternalLink, FiGrid, FiList } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 import OptimizedImage from '../OptimizedImage';
@@ -91,11 +91,7 @@ const Projects = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
           className="text-center mb-8"
         >
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">
@@ -104,17 +100,13 @@ const Projects = () => {
           <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             {t('projects.subtitle')}
           </p>
-        </motion.div>
+        </div>
 
         {/* Featured Projects - Full cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-6">
           {featuredProjects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               {project.image && (
@@ -172,7 +164,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -201,12 +193,8 @@ const Projects = () => {
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {otherProjects.map((project, index) => (
-                <motion.div
+                <div
                   key={project.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="group bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-md hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300"
                 >
                   {project.image && (
@@ -266,18 +254,14 @@ const Projects = () => {
                       )}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           ) : (
             <div className="space-y-2">
               {otherProjects.map((project, index) => (
-                <motion.div
+                <div
                   key={project.title}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 p-3 hover:shadow-md hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300"
                 >
                   {project.image && (
@@ -330,7 +314,7 @@ const Projects = () => {
                       </a>
                     )}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           )}
