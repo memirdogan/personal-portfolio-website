@@ -135,7 +135,7 @@ const Education = () => {
   };
 
   return (
-    <section id="education">
+    <section id="education" className="bg-slate-50 dark:bg-slate-950">
       <div className="container">
         <div className="section-title">
           <h2>{t('education.title')}</h2>
@@ -150,9 +150,9 @@ const Education = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-8"
         >
-          <h3 className="card-title flex items-center gap-2 mb-6">
+          <h3 className="card-title flex items-center gap-2 mb-4">
             <FiBook className="text-blue-700 dark:text-blue-400" />
             {t('education.education')}
           </h3>
@@ -202,7 +202,7 @@ const Education = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-4">
             <h3 className="card-title flex items-center gap-2">
               <FiAward className="text-blue-700 dark:text-blue-400" />
               {t('education.certifications')}

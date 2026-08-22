@@ -16,36 +16,37 @@ const BrandLine = () => {
     { name: '42 Istanbul', logo: '/brands/42-logo.png', alt: '42 Istanbul School logo' },
   ];
 
+  // 4x repeat ensures seamless infinite loop at any screen width
+  const repeated = [...brands, ...brands, ...brands, ...brands];
+
   return (
-    <section className="py-8 bg-gray-900 overflow-hidden">
+    <div className="py-8 bg-slate-900 overflow-hidden">
       <div className="relative">
-        {/* Gradient fade effects */}
-        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
-        
-        {/* CSS-animated scrolling container */}
-        <div className="flex animate-scroll hover:[animation-play-state:paused]">
-          {/* Render brands twice for seamless loop */}
-          {[...brands, ...brands].map((brand, index) => (
+        {/* Gradient fade effects - matches bg exactly */}
+        <div className="absolute left-0 top-0 w-28 h-full bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 w-28 h-full bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
+
+        {/* Scrolling track */}
+        <div className="flex animate-scroll">
+          {repeated.map((brand, index) => (
             <div
               key={`${brand.name}-${index}`}
-              className="flex-shrink-0 flex items-center justify-center w-32 h-32 mx-8"
+              className="flex-shrink-0 flex items-center justify-center w-28 h-28 mx-10"
             >
               <img
                 src={brand.logo}
                 alt={brand.alt}
-                className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                className="w-full h-full object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
                 loading="lazy"
                 onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
+                  (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
+import { FiCalendar, FiMapPin } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface ExperienceItem {
@@ -100,7 +100,7 @@ const Experience = () => {
   };
   
   return (
-    <section id="experience">
+    <section id="experience" className="bg-slate-50 dark:bg-slate-950">
       <div className="container">
         <div className="section-title">
           <h2>{t('experience.title')}</h2>
@@ -109,7 +109,7 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           {experiences.map((exp, index) => (
             <div
               key={index}
@@ -117,31 +117,35 @@ const Experience = () => {
             >
               <div className="timeline-dot" />
               
-              <div className="card mb-8 last:mb-0">
-                <div className="flex flex-wrap gap-4 items-start justify-between mb-4">
+              <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 mb-6 last:mb-0">
+                <div className="flex flex-wrap gap-3 items-start justify-between mb-3">
                   <div>
-                    <h3 className="card-title flex items-center gap-2">
-                      <FiBriefcase className="text-blue-700 dark:text-blue-400" />
-                      {exp.role} @ {exp.company}
+                    <h3 className="text-base font-semibold text-slate-900 dark:text-white">
+                      {exp.role}
                     </h3>
-                    <p className="card-subtitle flex items-center gap-2">
-                      <FiMapPin className="text-blue-600 dark:text-blue-500" />
+                    <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                      {exp.company}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                      <FiCalendar className="w-3.5 h-3.5" />
+                      {translatePeriod(exp.period)}
+                    </p>
+                    <p className="text-xs text-slate-400 dark:text-slate-500 flex items-center gap-1 mt-0.5">
+                      <FiMapPin className="w-3.5 h-3.5" />
                       {translateLocation(exp.location)}
                     </p>
                   </div>
-                  <p className="card-subtitle flex items-center gap-2">
-                    <FiCalendar className="text-blue-600 dark:text-blue-500" />
-                    {translatePeriod(exp.period)}
-                  </p>
                 </div>
 
-                <ul className="space-y-2">
+                <ul className="space-y-1.5">
                   {exp.descriptionKeys.map((descKey, i) => (
                     <li
                       key={i}
-                      className="text-blue-900 dark:text-blue-100 flex items-start gap-2"
+                      className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"
                     >
-                      <span className="text-blue-600 dark:text-blue-400 mt-1.5">•</span>
+                      <span className="text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0">•</span>
                       {t(descKey)}
                     </li>
                   ))}

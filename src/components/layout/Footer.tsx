@@ -8,34 +8,32 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      icon: <FiGithub className="w-5 h-5" />,
+      icon: <FiGithub className="w-4 h-4" />,
       url: 'https://github.com/memirdogan'
     },
     {
       name: 'LinkedIn',
-      icon: <FiLinkedin className="w-5 h-5" />,
+      icon: <FiLinkedin className="w-4 h-4" />,
       url: 'https://www.linkedin.com/in/mudogan/'
     }
   ];
 
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-center md:text-left">
-            <p className="text-gray-600 dark:text-gray-400">
-              © {currentYear} {t('footer.name')}. {t('footer.rights')}
-            </p>
-          </div>
+    <footer className="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            © {currentYear} {t('footer.name')}
+          </p>
 
-          <div className="flex space-x-6">
+          <div className="flex items-center gap-4">
             {socialLinks.map(link => (
               <a
                 key={link.name}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
+                className="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
                 aria-label={link.name}
               >
                 {link.icon}
@@ -48,4 +46,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

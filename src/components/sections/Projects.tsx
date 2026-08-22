@@ -86,7 +86,7 @@ const Projects = () => {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
+    <section id="projects" className="bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
@@ -96,18 +96,18 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3">
             <span className="text-gradient">💻 {t('projects.title')}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             {t('projects.subtitle')}
           </p>
         </motion.div>
 
         {/* Featured Projects - Full cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-6">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -337,7 +337,7 @@ const Projects = () => {
         </div>
 
         {/* GitHub Link */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-8">
           <a
             href="https://github.com/memirdogan"
             target="_blank"

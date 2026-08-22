@@ -46,21 +46,21 @@ const Skills = () => {
   const skillCategories = getSkillCategories();
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+    <section id="skills" className="bg-white dark:bg-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3">
             {t('skills.title')}
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             {t('skills.subtitle')}
           </p>
         </motion.div>

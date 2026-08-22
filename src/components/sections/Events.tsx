@@ -211,15 +211,21 @@ const Events = () => {
 
   const [itemsPerView, setItemsPerView] = useState(getItemsPerView());
   
-  // Window resize listener
+  // Window resize listener (debounced)
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
     const handleResize = () => {
-      setItemsPerView(getItemsPerView());
-      // Reset slide if out of bounds
-      setCurrentSlide(prev => Math.min(prev, Math.max(0, events.length - getItemsPerView())));
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setItemsPerView(getItemsPerView());
+        setCurrentSlide(prev => Math.min(prev, Math.max(0, events.length - getItemsPerView())));
+      }, 150);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+    };
   }, [events.length]);
 
   const maxSlide = Math.max(0, events.length - itemsPerView);
@@ -236,11 +242,13 @@ const Events = () => {
   const openGallery = (event: EventItem, index: number = 0) => {
     setSelectedEvent(event);
     setCurrentImageIndex(index);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeGallery = () => {
     setSelectedEvent(null);
     setCurrentImageIndex(0);
+    document.body.style.overflow = '';
   };
 
   const nextImage = () => {
@@ -259,13 +267,33 @@ const Events = () => {
     }
   };
 
+  // Touch swipe for carousel
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextSlide();
+      else prevSlide();
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
   if (events.length === 0) {
     return null;
   }
 
   return (
     <>
-      <section id="events" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+      <section id="events" className="bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
@@ -275,12 +303,12 @@ const Events = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3">
               <span className="text-gradient">🎤 {t('events.title')}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               {t('events.subtitle')}
           </p>
         </motion.div>
@@ -316,11 +344,18 @@ const Events = () => {
             )}
 
             {/* Slider */}
-            <div className="overflow-hidden" ref={sliderRef}>
+            <div
+              className="overflow-hidden touch-pan-y"
+              ref={sliderRef}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div
-                className="flex gap-4 md:gap-6 transition-transform duration-300 ease-out"
+                className="flex gap-4 md:gap-6 transition-transform duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
                 style={{ 
-                  transform: `translateX(-${currentSlide * (100 / itemsPerView)}%)` 
+                  transform: `translateX(-${currentSlide * (100 / itemsPerView)}%)`,
+                  willChange: 'transform'
                 }}
               >
                 {events.map((event, index) => (
@@ -367,7 +402,7 @@ const Events = () => {
                       </p>
 
                       <button
-                        onClick={(e) => { e.stopPropagation(); setDetailEvent(event); }}
+                        onClick={(e) => { e.stopPropagation(); setDetailEvent(event); document.body.style.overflow = 'hidden'; }}
                         className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline flex items-center gap-1 mb-3"
                       >
                         <FiMaximize2 className="w-3.5 h-3.5" />
@@ -418,7 +453,7 @@ const Events = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4"
-            onClick={() => setDetailEvent(null)}
+            onClick={() => { setDetailEvent(null); document.body.style.overflow = ''; }}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -437,7 +472,7 @@ const Events = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <button
                   className="absolute top-4 right-4 text-white/80 hover:text-white p-2 bg-black/30 rounded-full"
-                  onClick={() => setDetailEvent(null)}
+                  onClick={() => { setDetailEvent(null); document.body.style.overflow = ''; }}
                 >
                   <FiX className="w-6 h-6" />
                 </button>
@@ -482,7 +517,7 @@ const Events = () => {
                       {detailEvent.images.map((img, idx) => (
                         <button
                           key={idx}
-                          onClick={() => { setDetailEvent(null); openGallery(detailEvent, idx); }}
+                          onClick={() => { setDetailEvent(null); document.body.style.overflow = ''; openGallery(detailEvent, idx); }}
                           className="flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden hover:opacity-80 transition-opacity"
                         >
                           <img src={img} alt="" className="w-full h-full object-cover" />
@@ -496,13 +531,13 @@ const Events = () => {
               {/* Modal Footer */}
               <div className="p-4 border-t border-gray-200 dark:border-gray-700 flex justify-end gap-3">
                 <button
-                  onClick={() => { setDetailEvent(null); openGallery(detailEvent); }}
+                  onClick={() => { setDetailEvent(null); document.body.style.overflow = ''; openGallery(detailEvent); }}
                   className="px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
                 >
                   📷 {isTR ? 'Galeriyi Aç' : 'Open Gallery'}
                 </button>
                 <button
-                  onClick={() => setDetailEvent(null)}
+                  onClick={() => { setDetailEvent(null); document.body.style.overflow = ''; }}
                   className="px-4 py-2 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors"
                 >
                   {isTR ? 'Kapat' : 'Close'}

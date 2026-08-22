@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
-// Analytics tracking functions
+
 const trackEvent = (action: string, category: string, label?: string, value?: number) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', action, {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', action, {
       event_category: category,
       event_label: label,
       value: value,
@@ -17,25 +17,27 @@ interface SocialLink {
   icon: React.ReactNode;
   href: string;
   label: string;
-  onClick?: () => void;
+  color: string;
 }
 
 const socialLinks: SocialLink[] = [
   {
-    icon: <FiGithub className="w-6 h-6" />,
+    icon: <FiGithub className="w-5 h-5" />,
     href: 'https://github.com/memirdogan',
-    label: 'GitHub'
+    label: 'GitHub',
+    color: 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900'
   },
   {
-    icon: <FiLinkedin className="w-6 h-6" />,
+    icon: <FiLinkedin className="w-5 h-5" />,
     href: 'https://www.linkedin.com/in/mudogan/',
-    label: 'LinkedIn'
+    label: 'LinkedIn',
+    color: 'hover:bg-blue-600 hover:text-white'
   },
   {
-    icon: <FiMail className="w-6 h-6" />,
+    icon: <FiMail className="w-5 h-5" />,
     href: 'mailto:musaemird@gmail.com',
     label: 'Email',
-    onClick: () => trackEvent('email_click', 'conversion', 'primary_email', 1)
+    color: 'hover:bg-red-500 hover:text-white'
   }
 ];
 
@@ -43,66 +45,45 @@ const Contact = () => {
   const { t } = useLanguage();
   
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05]" />
-      
+    <section id="contact" className="bg-white dark:bg-slate-900">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center"
+          className="max-w-xl mx-auto text-center"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">
-            <span className="text-gradient">📫 {t('contact.title')}</span>
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+          <h2>{t('contact.title')}</h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-8">
             {t('contact.subtitle')}
           </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-12"
+          {/* Resume Download */}
+          <a
+            href="/resume/emir-dogan-resume.pdf"
+            download
+            className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all text-sm font-medium"
+            onClick={() => trackEvent('resume_download', 'conversion', 'CV Download', 1)}
           >
-            <a
-              href="/resume/emir-dogan-resume.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 glass dark:glass-dark rounded-xl hover:scale-105 transition-transform"
-              onClick={() => trackEvent('resume_download', 'conversion', 'CV Download', 1)}
-            >
-              <FiDownload className="w-5 h-5 text-accent-blue dark:text-accent-purple" />
-              <span className="font-medium">{t('contact.downloadResume')}</span>
-            </a>
-          </motion.div>
+            <FiDownload className="w-4 h-4" />
+            {t('contact.downloadResume')}
+          </a>
 
-          <div className="flex justify-center gap-6">
+          {/* Social Links */}
+          <div className="flex justify-center gap-3">
             {socialLinks.map((link) => (
-              <motion.a
+              <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 glass dark:glass-dark rounded-xl hover:scale-110 transition-transform"
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 20 }}
-                onClick={() => {
-                  if (link.onClick) {
-                    link.onClick();
-                  }
-                  trackEvent('external_link_click', 'engagement', `${link.label}: ${link.href}`);
-                }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                className={`p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-all duration-200 ${link.color}`}
+                onClick={() => trackEvent('external_link_click', 'engagement', `${link.label}: ${link.href}`)}
+                aria-label={link.label}
               >
-                <span className="text-accent-blue dark:text-accent-purple">
-                  {link.icon}
-                </span>
-                <span className="sr-only">{link.label}</span>
-              </motion.a>
+                {link.icon}
+              </a>
             ))}
           </div>
         </motion.div>
@@ -111,4 +92,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

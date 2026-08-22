@@ -45,7 +45,7 @@ const Publications = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section id="publications">
+    <section id="publications" className="bg-white dark:bg-slate-900">
       <div className="container">
         <div className="section-title">
           <h2>{t('publications.title')}</h2>
@@ -54,7 +54,7 @@ const Publications = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {articles.map((article, index) => (
                 <motion.a
                   key={article.link}

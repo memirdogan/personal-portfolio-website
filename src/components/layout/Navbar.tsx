@@ -9,11 +9,18 @@ const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -40,8 +47,8 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass dark:glass-dark backdrop-blur-md py-4'
-          : 'bg-transparent py-6'
+          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm py-3'
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,10 +67,10 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-3 py-2 rounded-full text-xs xl:text-sm font-medium hover:text-accent-blue dark:hover:text-accent-purple transition-colors relative group whitespace-nowrap hover:scale-105 active:scale-95"
+                className="px-3 py-2 rounded-full text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group whitespace-nowrap hover:scale-105 active:scale-95"
               >
                 {item.label}
-                <span className="absolute inset-x-2 -bottom-px h-px bg-gradient-to-r from-accent-blue/0 via-accent-blue/70 to-accent-blue/0 dark:from-accent-purple/0 dark:via-accent-purple/70 dark:to-accent-purple/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="absolute inset-x-2 -bottom-px h-px bg-gradient-to-r from-blue-600/0 via-blue-600/70 to-blue-600/0 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
             ))}
 
@@ -72,14 +79,14 @@ const Navbar = () => {
               onClick={toggleLanguage}
               className={`p-2 rounded-full transition-all hover:scale-110 active:scale-90 ${
                 isScrolled
-                  ? 'hover:bg-white/10 dark:hover:bg-black/10'
-                  : 'hover:bg-black/5 dark:hover:bg-white/5'
+                  ? 'hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'hover:bg-slate-100 dark:hover:bg-white/5'
               }`}
               aria-label={`Switch to ${language === 'tr' ? 'English' : 'Turkish'}`}
             >
               <div className="flex items-center gap-1">
-                <FiGlobe className="w-4 h-4 text-accent-blue dark:text-accent-purple" />
-                <span className="text-sm font-medium text-accent-blue dark:text-accent-purple">
+                <FiGlobe className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
                   {language.toUpperCase()}
                 </span>
               </div>
@@ -90,7 +97,7 @@ const Navbar = () => {
           {/* Mobile/Tablet Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-full hover:bg-white/10 dark:hover:bg-black/10 transition-colors hover:scale-110 active:scale-90"
+            className="lg:hidden p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors hover:scale-110 active:scale-90"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -110,14 +117,14 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden glass dark:glass-dark backdrop-blur-md"
+            className="lg:hidden glass dark:glass-dark"
           >
             <div className="px-4 py-6 space-y-3">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block px-4 py-2 rounded-full text-base font-medium hover:text-accent-blue dark:hover:text-accent-purple hover:translate-x-2 transition-all"
+                  className="block px-4 py-2 rounded-full text-base font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-2 transition-all"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -128,7 +135,7 @@ const Navbar = () => {
                   toggleLanguage();
                   setIsMenuOpen(false);
                 }}
-                className="w-full text-left px-4 py-2 rounded-full text-base font-medium hover:text-accent-blue dark:hover:text-accent-purple hover:translate-x-2 transition-all"
+                className="w-full text-left px-4 py-2 rounded-full text-base font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-2 transition-all"
               >
                 🌐 {language === 'tr' ? 'English' : 'Türkçe'}
               </button>

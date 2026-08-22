@@ -20,7 +20,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen">
-        <div className="bg-gray-900 text-white">
+        <div className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
             <Navbar />
             <main role="main">
               <Hero />
